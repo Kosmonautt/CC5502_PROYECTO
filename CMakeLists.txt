@@ -11,5 +11,5 @@ project(VoronoiVisualization)
 # Create the executable for box boundary
 add_executable(VoronoiVisualization src/main.cpp)
 
-# # Link CGAL to the executable
-# target_link_libraries(VoronoiVisualization CGAL::CGAL)
+# Link CGAL to the executable
+target_link_libraries(VoronoiVisualization glfw)
