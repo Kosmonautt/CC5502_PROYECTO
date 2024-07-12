@@ -19,4 +19,6 @@
         - Para instalar CGAL se corrió el siguiente comando:
             - sudo apt-get install libcgal-dev
         - Para instalar GLFW se corrió el siguiente comando:
-            - sudo apt-get install libglfw3-dev 
+            - sudo apt-get install libglfw3-dev
+        - Para utilizar glad.h, se descargó del [sitio oficial](https://glad.dav1d.de/) eligiendo (cosas en la foto opengl.png), se incluyeron los archivos glad.c y glad.h en src y se en la línea 25 de glad.c, se cambió #include <glad/glad.h>
+        a #include "glad.h".
