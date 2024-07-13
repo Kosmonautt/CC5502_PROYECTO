@@ -84,20 +84,31 @@ int main(int, char**) {
     // Create shader program
     unsigned int shaderProgram = createShaderProgram(vertexShaderSource, fragmentShaderSource);
 
-    float vertices[] = {
-        0.0f, 0.5f, 0.0f,  // Point 1
-        -0.5f, -0.5f, 0.0f, // Point 2 (Line 1: Point 1 -> Point 2)
-
-        -0.5f, -0.5f, 0.0f, // Point 2
-        0.5f, -0.5f, 0.0f,  // Point 3 (Line 2: Point 2 -> Point 3)
-
-        0.5f, -0.5f, 0.0f,  // Point 3
-        0.0f, 0.5f, 0.0f    // Point 1 (Line 3: Point 3 -> Point 1)
+    // this are the vertices in the figure
+    float pointVertices[] = {
+        0.0f, 0.5f, 0.0f,
+        -0.5f, -0.5f, 0.0f,
+        0.5f, -0.5f, 0.0f
     };
 
-    // Setup buffers
-    unsigned int VAO, VBO;
-    setupBuffers(&VAO, &VBO, vertices, sizeof(vertices));
+    // this are the edges in the figure
+    float lineVertices[] = {
+        -1.0f, 0.0f, 0.0f,  
+        1.0f, 0.0f, 0.0f, 
+        // -0.5f, -0.5f, 0.0f, 
+        // 0.5f, -0.5f, 0.0f,  
+        // 0.5f, -0.5f, 0.0f,  
+        // 0.0f, 0.5f, 0.0f    
+    };
+
+    // buffer for the vertices
+    unsigned int pointVAO, pointVBO;
+    setupBuffers(&pointVAO, &pointVBO, pointVertices, sizeof(pointVertices));
+
+    // buffer for the edges
+    unsigned int lineVAO, lineVBO;
+    setupBuffers(&lineVAO, &lineVBO, lineVertices, sizeof(lineVertices));
+
 
     // the size of the points is set to 10.0f
     glPointSize(10.0f);
@@ -113,21 +124,24 @@ int main(int, char**) {
 
         // this tells the GPU to use the shader program
         glUseProgram(shaderProgram);
-        // this tells the GPU to use the VAO
-        glBindVertexArray(VAO);
 
-        // this are the points to draw
-        glDrawArrays(GL_POINTS, 0, 6);
 
-        // this are the lines to draw
-        glDrawArrays(GL_LINES, 0, 6);
+        // the vertices are drawn
+        glBindVertexArray(pointVAO);
+        glDrawArrays(GL_POINTS, 0, 3);
+
+        // the edges are drawn
+        glBindVertexArray(lineVAO);
+        glDrawArrays(GL_LINES, 0, 2);
 
         glfwSwapBuffers(window);
     }
 
     // clean up
-    glDeleteVertexArrays(1, &VAO);
-    glDeleteBuffers(1, &VBO);
+    glDeleteVertexArrays(1, &pointVAO);
+    glDeleteBuffers(1, &pointVBO);
+    glDeleteVertexArrays(1, &lineVAO);
+    glDeleteBuffers(1, &lineVBO);
     glDeleteProgram(shaderProgram);
     glfwTerminate();
     return 0;
