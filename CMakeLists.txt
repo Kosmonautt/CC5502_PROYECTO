@@ -5,8 +5,8 @@ set(CMAKE_CXX_STANDARD 17)
 # Project name
 project(VoronoiVisualization)
 
-# # Find CGAL
-# find_package(CGAL REQUIRED)
+# Find CGAL
+find_package(CGAL REQUIRED)
 
 # Find OpenGL
 find_package(OpenGL REQUIRED)
@@ -22,4 +22,5 @@ add_executable(VoronoiVisualization
 target_link_libraries(VoronoiVisualization
     glfw
     OpenGL::GL
+    CGAL::CGAL
 )

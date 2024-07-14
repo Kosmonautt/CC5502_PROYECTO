@@ -1,6 +1,53 @@
 #include <iostream>
 #include "glad.h"
 #include <GLFW/glfw3.h>
+#include <CGAL/Exact_predicates_exact_constructions_kernel.h>
+#include <CGAL/Delaunay_triangulation_2.h>
+#include <iterator>
+
+typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
+typedef K::Point_2 Point_2;
+typedef K::Iso_rectangle_2 Iso_rectangle_2;
+typedef K::Segment_2 Segment_2;
+typedef K::Ray_2 Ray_2;
+typedef K::Line_2 Line_2;
+typedef CGAL::Delaunay_triangulation_2<K>  Delaunay_triangulation_2;
+
+// struct that will store the cropped Voronoi diagram
+struct Cropped_voronoi_from_delaunay{
+    // this list will store the segments of the cropped Voronoi diagram
+    std::list<Segment_2> m_cropped_vd;
+    // this is the bounding box that will constrain the Voronoi diagram
+    Iso_rectangle_2 m_bbox;
+
+    // constructor that receives the bounding box
+    Cropped_voronoi_from_delaunay(const Iso_rectangle_2& bbox):m_bbox(bbox){}
+
+    // this template allows to use the same function for rays, lines and segments
+    template <class RSL>
+    // this function crops the input object to the bounding box and stores the segment
+    void crop_and_extract_segment(const RSL& rsl){
+        // the intersection of the rsl and the bounding box is stored in obj which supports multiple types
+        CGAL::Object obj = CGAL::intersection(rsl,m_bbox);
+        // if obj is a segment, it is stored in the list
+        const Segment_2* s=CGAL::object_cast<Segment_2>(&obj);
+        if (s) 
+            m_cropped_vd.push_back(*s);
+    }
+
+    // overload the << operator to allow the cropping of rays, lines and segments
+    void operator<<(const Ray_2& ray) {
+        crop_and_extract_segment(ray);
+    }
+
+    void operator<<(const Line_2& line) {
+        crop_and_extract_segment(line); 
+    }
+
+    void operator<<(const Segment_2& seg) {
+        crop_and_extract_segment(seg); 
+    }
+};
 
 // vertex shader source
 const char* vertexShaderSource = R"glsl(
@@ -16,7 +63,7 @@ const char* fragmentShaderSource = R"glsl(
     #version 330 core
     out vec4 FragColor;
     void main() {
-        FragColor = vec4(1.0, 0.5, 0.2, 1.0);
+        FragColor = vec4(0.59, 0.11, 0.59, 1.0);
     }
 )glsl";
 
@@ -114,7 +161,7 @@ int main(int, char**) {
     glPointSize(10.0f);
 
     // the background color is set to purple
-    glClearColor(0.5f, 0.0f, 0.5f, 1.0f);
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
     while (!glfwWindowShouldClose(window)) {
         // this allows to close the window by pressing the ESC key
