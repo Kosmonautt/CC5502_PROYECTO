@@ -70,7 +70,7 @@ GLFWwindow* initWindowAndContext() {
         std::cerr << "Failed to initialize GLFW" << std::endl;
         return nullptr;
     }
-    GLFWwindow* window = glfwCreateWindow(640, 480, "Largest empty circle", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(640, 640, "Largest empty circle", NULL, NULL);
     if (!window) {
         std::cerr << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
