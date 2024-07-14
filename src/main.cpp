@@ -121,13 +121,31 @@ struct Cropped_voronoi_from_delaunay{
     }
 };
 
-// function that returns an vector of points that represent the vertices of the Voronoi diagram
+// function that returns a vector of points that represent the vertices of the Voronoi diagram
 std::vector<Point_2> getCGALPoints(std::vector<float> vertices){
     std::vector<Point_2> points;
     for (size_t i = 0; i < vertices.size(); i += 3) {
         points.push_back(Point_2(vertices[i], vertices[i + 1]));
     }
     return points;
+}
+
+// function that returns a vector of floats that represent the vertices of the Voronoi diagram
+std::vector<float> getLineVertices(std::list<Segment_2> segments){
+    std::vector<float> vertices;
+    for (const Segment_2& segment : segments) {
+        // the source and target points of the segment are extracted
+        Point_2 source = segment.source();
+        Point_2 target = segment.target();
+        // the coordinates are converted to float and added to the vector
+        vertices.push_back(CGAL::to_double(source.x()));
+        vertices.push_back(CGAL::to_double(source.y()));
+        vertices.push_back(0.0f);
+        vertices.push_back(CGAL::to_double(target.x()));
+        vertices.push_back(CGAL::to_double(target.y()));
+        vertices.push_back(0.0f);
+    }
+    return vertices;
 }
 
 int main(int, char**) {
@@ -161,44 +179,16 @@ int main(int, char**) {
     Cropped_voronoi_from_delaunay voronoi(bbox);
     dt2.draw_dual(voronoi);
 
-    // // the number of vertices in the cropped Voronoi diagram is stored
-    // // each segment has 2 vertices and each vertex has 3 coordinates
-    // size_t numVertices = voronoi.m_cropped_vd.size() * 2 * 3;
-    // // an array with the edge vertices is created
-    // float lineVertices[numVertices];
-    // // an index to store the vertices in the array
-    // size_t index = 0;
-
-    // // the segments are iterated
-    // for (const Segment_2& segment : voronoi.m_cropped_vd) {
-    //     // the source and target points of the segment are extracted
-    //     Point_2 source = segment.source();
-    //     Point_2 target = segment.target();
-
-    //     // the coordinates are converted to float
-    //     float sourceX = CGAL::to_double(source.x());
-    //     float sourceY = CGAL::to_double(source.y());
-    //     float targetX = CGAL::to_double(target.x());
-    //     float targetY = CGAL::to_double(target.y());
-
-    //     // the source point is added to the array
-    //     lineVertices[index++] = sourceX;
-    //     lineVertices[index++] = sourceY;
-    //     lineVertices[index++] = 0.0f;
-
-    //     // the target point is added to the array
-    //     lineVertices[index++] = targetX;
-    //     lineVertices[index++] = targetY;
-    //     lineVertices[index++] = 0.0f;
-    // }
+    // an vector for the edge vertices is created
+    std::vector<float> lineVertices = getLineVertices(voronoi.m_cropped_vd);
 
     // buffer for the vertices
     unsigned int pointVAO, pointVBO;
     setupBuffers(&pointVAO, &pointVBO, pointVertices);
 
-    // // buffer for the edges
-    // unsigned int lineVAO, lineVBO;
-    // setupBuffers(&lineVAO, &lineVBO, lineVertices, sizeof(lineVertices));
+    // buffer for the edges
+    unsigned int lineVAO, lineVBO;
+    setupBuffers(&lineVAO, &lineVBO, lineVertices);
 
 
     // the size of the points is set to 10.0f
@@ -221,9 +211,9 @@ int main(int, char**) {
         glBindVertexArray(pointVAO);
         glDrawArrays(GL_POINTS, 0, pointVertices.size() / 3);
 
-        // // the edges are drawn
-        // glBindVertexArray(lineVAO);
-        // glDrawArrays(GL_LINES, 0, (sizeof(lineVertices) / sizeof(float)) / 3);
+        // the edges are drawn
+        glBindVertexArray(lineVAO);
+        glDrawArrays(GL_LINES, 0, lineVertices.size() / 3);
 
         glfwSwapBuffers(window);
     }
@@ -231,8 +221,8 @@ int main(int, char**) {
     // clean up
     glDeleteVertexArrays(1, &pointVAO);
     glDeleteBuffers(1, &pointVBO);
-    // glDeleteVertexArrays(1, &lineVAO);
-    // glDeleteBuffers(1, &lineVBO);
+    glDeleteVertexArrays(1, &lineVAO);
+    glDeleteBuffers(1, &lineVBO);
     glDeleteProgram(shaderProgram);
     glfwTerminate();
     return 0;
