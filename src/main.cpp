@@ -121,6 +121,15 @@ struct Cropped_voronoi_from_delaunay{
     }
 };
 
+// function that returns an array of points that represent the vertices of the Voronoi diagram
+std::vector<Point_2> getCGALPoints(float* vertices, size_t size){
+    std::vector<Point_2> points;
+    for (size_t i = 0; i < size; i+=3){
+        points.push_back(Point_2(vertices[i], vertices[i+1]));
+    }
+    return points;
+}
+
 int main(int, char**) {
     // Initialize window and context
     GLFWwindow* window = initWindowAndContext();
@@ -136,6 +145,15 @@ int main(int, char**) {
         -0.5f, -0.5f, 0.0f,
         0.5f, -0.5f, 0.0f
     };
+
+    // the points are stored in a vector of CGAL points
+    std::vector<Point_2> points = getCGALPoints(pointVertices, sizeof(pointVertices) / sizeof(float));
+
+    // the points are printed
+    std::cout << "The points are: " << std::endl;
+    for (auto point : points){
+        std::cout << point << std::endl;
+    }
 
     // this are the edges in the figure
     float lineVertices[] = {
