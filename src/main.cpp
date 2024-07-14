@@ -1,3 +1,4 @@
+#include <utility> 
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
@@ -25,6 +26,8 @@ float inputPointsColor[3] = {1.0f, 0.0f, 0.0f};
 float voronoiEdgesColor[3] = {0.0f, 1.0f, 0.0f};
 // the color of the convex hull (blue)
 float convexHullColor[3] = {0.0f, 0.0f, 1.0f};
+// the color of the candidate points (white)
+float candidatePointsColor[3] = {1.0f, 1.0f, 1.0f};
 
 // vertex shader source
 const char* vertexShaderSource = R"glsl(
@@ -155,35 +158,62 @@ std::vector<Point_2> getCGALPoints(std::vector<float> vertices){
     return points;
 }
 
-// function that returns a vector of floats that represent the vertices of the Voronoi diagram
-std::vector<float> getVoronoiVertices(std::list<Segment_2> segments){
-    std::vector<float> vertices;
+// function that returns a vector of floats that represent the edges of the Voronoi diagram
+std::pair<std::vector<float>, std::vector<float>> getVoronoiEdges(std::list<Segment_2> segments){
+    // vector for the edges of the Voronoi diagram
+    std::vector<float> edges;
+    // vector for the points of the Voronoi diagram
+    std::vector<float> points;
+    // set with the vertices of the Voronoi diagram
+    std::set<Point_2> vertices;
+    // for all segments in the list
     for (const Segment_2& segment : segments) {
         // the source and target points of the segment are extracted
         Point_2 source = segment.source();
         Point_2 target = segment.target();
+        // the source and target points are added to the set
+        vertices.insert(source);
+        vertices.insert(target);
         // the coordinates are converted to float and added to the vector
-        vertices.push_back(CGAL::to_double(source.x()));
-        vertices.push_back(CGAL::to_double(source.y()));
-        vertices.push_back(0.0f);
+        edges.push_back(CGAL::to_double(source.x()));
+        edges.push_back(CGAL::to_double(source.y()));
+        edges.push_back(0.0f);
         // the color of the edges is set
-        vertices.push_back(voronoiEdgesColor[0]);
-        vertices.push_back(voronoiEdgesColor[1]);
-        vertices.push_back(voronoiEdgesColor[2]);
+        edges.push_back(voronoiEdgesColor[0]);
+        edges.push_back(voronoiEdgesColor[1]);
+        edges.push_back(voronoiEdgesColor[2]);
         // the coordinates are converted to float and added to the vector
-        vertices.push_back(CGAL::to_double(target.x()));
-        vertices.push_back(CGAL::to_double(target.y()));
-        vertices.push_back(0.0f);
+        edges.push_back(CGAL::to_double(target.x()));
+        edges.push_back(CGAL::to_double(target.y()));
+        edges.push_back(0.0f);
         // the color of the edges is set
-        vertices.push_back(voronoiEdgesColor[0]);
-        vertices.push_back(voronoiEdgesColor[1]);
-        vertices.push_back(voronoiEdgesColor[2]);
+        edges.push_back(voronoiEdgesColor[0]);
+        edges.push_back(voronoiEdgesColor[1]);
+        edges.push_back(voronoiEdgesColor[2]);
     }
-    return vertices;
+
+    // the vertices of the Voronoi diagram are added to the edges vector
+    for (const Point_2& vertex : vertices) {
+        // if the x or y coordinate is in the bounding box, the vertex is not added
+        if (vertex.x() == -1.0 || vertex.x() == 1.0 || vertex.y() == -1.0 || vertex.y() == 1.0) {
+            continue;
+        }
+        // the vertex is added to the edges vector
+        // position
+        points.push_back(CGAL::to_double(vertex.x()));
+        points.push_back(CGAL::to_double(vertex.y()));
+        points.push_back(0.0f);
+        // color
+        points.push_back(candidatePointsColor[0]);
+        points.push_back(candidatePointsColor[1]);
+        points.push_back(candidatePointsColor[2]);
+    }
+
+    return {edges, points};
 }
 
 // function that return an array of floats that represent the vertices of the convex hull
-std::vector<float> getConvexHullVertices(std::vector<Point_2> points){
+std::vector<float> getConvexHullEdges(std::vector<Point_2> points){
     std::vector<std::size_t> ch_points(points.size()), out;
     std::iota(ch_points.begin(), ch_points.end(), 0);
     // the convex hull is computed
@@ -270,17 +300,26 @@ int main(int, char**) {
     // vector for the line vertices
     std::vector<float> lineVertices;
 
+    // the voronoi diagram is calculated and saved
+    std::pair<std::vector<float>, std::vector<float>> voronoiEdgesVertices = getVoronoiEdges(voronoi.m_cropped_vd);
+
     // a vector with the edge vertices of the voronoi diagram is created
-    std::vector<float> voronoiVertices = getVoronoiVertices(voronoi.m_cropped_vd);
+    std::vector<float> voronoiEdges = voronoiEdgesVertices.first;
+
+    // a vector with the point vertices of the voronoi diagram is created
+    std::vector<float> voronoiPoints = voronoiEdgesVertices.second;
 
     // the vertices of the voronoi diagram are added to the line vertices
-    lineVertices.insert(lineVertices.end(), voronoiVertices.begin(), voronoiVertices.end());
+    lineVertices.insert(lineVertices.end(), voronoiEdges.begin(), voronoiEdges.end());
+
+    // the vertices of the voronoi diagram are added to the point vertices
+    pointVertices.insert(pointVertices.end(), voronoiPoints.begin(), voronoiPoints.end());
 
     // a vector with the vertices of the convex hull is created
-    std::vector<float> convexHullVertices = getConvexHullVertices(points);
+    std::vector<float> convexHullEdges = getConvexHullEdges(points);
 
     // the vertices of the convex hull are added to the line vertices
-    lineVertices.insert(lineVertices.end(), convexHullVertices.begin(), convexHullVertices.end());
+    lineVertices.insert(lineVertices.end(), convexHullEdges.begin(), convexHullEdges.end());
 
     // buffer for the vertices
     unsigned int pointVAO, pointVBO;
