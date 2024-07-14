@@ -19,8 +19,13 @@ typedef CGAL::Delaunay_triangulation_2<K>  Delaunay_triangulation_2;
 const char* vertexShaderSource = R"glsl(
     #version 330 core
     layout (location = 0) in vec3 aPos;
+    layout (location = 1) in vec3 aColor;
+
+    out vec3 ourColor;
+
     void main() {
-        gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
+        gl_Position = vec4(aPos, 1.0);
+        ourColor = aColor;
     }
 )glsl";
 
@@ -28,8 +33,11 @@ const char* vertexShaderSource = R"glsl(
 const char* fragmentShaderSource = R"glsl(
     #version 330 core
     out vec4 FragColor;
+
+    in vec3 ourColor;
+
     void main() {
-        FragColor = vec4(0.59, 0.11, 0.59, 1.0);
+        FragColor = vec4(ourColor, 1.0);
     }
 )glsl";
 
@@ -62,8 +70,12 @@ void setupBuffers(unsigned int* VAO, unsigned int* VBO, const std::vector<float>
     glBindVertexArray(*VAO);
     glBindBuffer(GL_ARRAY_BUFFER, *VBO);
     glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), vertices.data(), GL_STATIC_DRAW);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
+    glBindBuffer(GL_ARRAY_BUFFER, 0); 
+    glBindVertexArray(0); 
 }
 
 // initialize window and context
@@ -150,6 +162,9 @@ std::vector<float> getLineVertices(std::list<Segment_2> segments){
     return vertices;
 }
 
+// the color of the input points
+float inputPointsColor[3] = {1.0f, 0.0f, 0.0f};
+
 int main(int, char**) {
     // Seed the random number generator with the current time
     srand(static_cast<unsigned int>(time(NULL)));
@@ -164,11 +179,11 @@ int main(int, char**) {
 
     // // this are the vertices in the figure
     // std::vector<float> pointVertices = {
-    //     0.0f, 0.0f, 0.0f,
-    //     0.5f, 0.5f, 0.0f,
-    //     -0.5f, 0.5f, 0.0f,
-    //     0.5f, -0.5f, 0.0f,
-    //     -0.5f, -0.5f, 0.0f,
+    //     0.0f, 0.0f, 0.0f,   1.0f, 0.0f, 0.0f,
+    //     0.5f, 0.5f, 0.0f,   1.0f, 0.0f, 0.0f,
+    //     -0.5f, 0.5f, 0.0f,  1.0f, 0.0f, 0.0f,
+    //     0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,
+    //     -0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f,
     // };
 
     // generate random points
@@ -176,34 +191,39 @@ int main(int, char**) {
     for (int i = 0; i < 10; i++) {
         float x = -1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (2.0f)));
         float y = -1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (2.0f)));
+        // position
         pointVertices.push_back(x);
         pointVertices.push_back(y);
         pointVertices.push_back(0.0f);
+        // color
+        pointVertices.push_back(inputPointsColor[0]);
+        pointVertices.push_back(inputPointsColor[1]);
+        pointVertices.push_back(inputPointsColor[2]);
     }
 
-    // the points are stored in a vector of CGAL points
-    std::vector<Point_2> points = getCGALPoints(pointVertices);
+    // // the points are stored in a vector of CGAL points
+    // std::vector<Point_2> points = getCGALPoints(pointVertices);
 
-    // the triangulation object is created
-    Delaunay_triangulation_2 dt2;
-    // the points are inserted in the triangulation (this will also compute the Voronoi diagram)
-    dt2.insert(points.begin(), points.end());
-    // a box from (-1,-1) to (1,1) is created, this will crop the Voronoi diagram
-    Iso_rectangle_2 bbox(-1,-1,1,1);
-    // the cropped Voronoi diagram is created
-    Cropped_voronoi_from_delaunay voronoi(bbox);
-    dt2.draw_dual(voronoi);
+    // // the triangulation object is created
+    // Delaunay_triangulation_2 dt2;
+    // // the points are inserted in the triangulation (this will also compute the Voronoi diagram)
+    // dt2.insert(points.begin(), points.end());
+    // // a box from (-1,-1) to (1,1) is created, this will crop the Voronoi diagram
+    // Iso_rectangle_2 bbox(-1,-1,1,1);
+    // // the cropped Voronoi diagram is created
+    // Cropped_voronoi_from_delaunay voronoi(bbox);
+    // dt2.draw_dual(voronoi);
 
-    // an vector for the edge vertices is created
-    std::vector<float> lineVertices = getLineVertices(voronoi.m_cropped_vd);
+    // // an vector for the edge vertices is created
+    // std::vector<float> lineVertices = getLineVertices(voronoi.m_cropped_vd);
 
     // buffer for the vertices
     unsigned int pointVAO, pointVBO;
     setupBuffers(&pointVAO, &pointVBO, pointVertices);
 
-    // buffer for the edges
-    unsigned int lineVAO, lineVBO;
-    setupBuffers(&lineVAO, &lineVBO, lineVertices);
+    // // buffer for the edges
+    // unsigned int lineVAO, lineVBO;
+    // setupBuffers(&lineVAO, &lineVBO, lineVertices);
 
 
     // the size of the points is set to 10.0f
@@ -224,11 +244,11 @@ int main(int, char**) {
 
         // the vertices are drawn
         glBindVertexArray(pointVAO);
-        glDrawArrays(GL_POINTS, 0, pointVertices.size() / 3);
+        glDrawArrays(GL_POINTS, 0, pointVertices.size() / 6);
 
-        // the edges are drawn
-        glBindVertexArray(lineVAO);
-        glDrawArrays(GL_LINES, 0, lineVertices.size() / 3);
+        // // the edges are drawn
+        // glBindVertexArray(lineVAO);
+        // glDrawArrays(GL_LINES, 0, lineVertices.size() / 3);
 
         glfwSwapBuffers(window);
     }
@@ -236,8 +256,8 @@ int main(int, char**) {
     // clean up
     glDeleteVertexArrays(1, &pointVAO);
     glDeleteBuffers(1, &pointVBO);
-    glDeleteVertexArrays(1, &lineVAO);
-    glDeleteBuffers(1, &lineVBO);
+    // glDeleteVertexArrays(1, &lineVAO);
+    // glDeleteBuffers(1, &lineVBO);
     glDeleteProgram(shaderProgram);
     glfwTerminate();
     return 0;
