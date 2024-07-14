@@ -141,10 +141,12 @@ int main(int, char**) {
     float lineVertices[] = {
         -1.0f, 0.0f, 0.0f,  
         1.0f, 0.0f, 0.0f, 
-        // -0.5f, -0.5f, 0.0f, 
-        // 0.5f, -0.5f, 0.0f,  
-        // 0.5f, -0.5f, 0.0f,  
-        // 0.0f, 0.5f, 0.0f    
+        0.0f, 1.0f, 0.0f, 
+        0.0f, -1.0f, 0.0f,  
+        1.0f, 1.0f, 0.0f,  
+        -1.0f, -1.0f, 0.0f,
+        -1.0f, 1.0f, 0.0f,  
+        1.0f, -1.0f, 0.0f,
     };
 
     // buffer for the vertices
@@ -174,11 +176,11 @@ int main(int, char**) {
 
         // the vertices are drawn
         glBindVertexArray(pointVAO);
-        glDrawArrays(GL_POINTS, 0, 3);
+        glDrawArrays(GL_POINTS, 0, (sizeof(pointVertices) / sizeof(float)) / 3);
 
         // the edges are drawn
         glBindVertexArray(lineVAO);
-        glDrawArrays(GL_LINES, 0, 2);
+        glDrawArrays(GL_LINES, 0, (sizeof(lineVertices) / sizeof(float)) / 3);
 
         glfwSwapBuffers(window);
     }
