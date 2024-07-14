@@ -5,6 +5,9 @@
 #include <GLFW/glfw3.h>
 #include <CGAL/Exact_predicates_exact_constructions_kernel.h>
 #include <CGAL/Delaunay_triangulation_2.h>
+#include <CGAL/convex_hull_2.h>
+#include <CGAL/Convex_hull_traits_adapter_2.h>
+#include <CGAL/property_map.h>
 #include <iterator>
 
 typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
@@ -14,11 +17,14 @@ typedef K::Segment_2 Segment_2;
 typedef K::Ray_2 Ray_2;
 typedef K::Line_2 Line_2;
 typedef CGAL::Delaunay_triangulation_2<K>  Delaunay_triangulation_2;
+typedef CGAL::Convex_hull_traits_adapter_2<K, CGAL::Pointer_property_map<Point_2>::type > Convex_hull_traits_2;
 
 // the color of the input points (red)
 float inputPointsColor[3] = {1.0f, 0.0f, 0.0f};
 // the color fo the voronoi edges (green)
 float voronoiEdgesColor[3] = {0.0f, 1.0f, 0.0f};
+// the color of the convex hull (blue)
+float convexHullColor[3] = {0.0f, 0.0f, 1.0f};
 
 // vertex shader source
 const char* vertexShaderSource = R"glsl(
@@ -150,7 +156,7 @@ std::vector<Point_2> getCGALPoints(std::vector<float> vertices){
 }
 
 // function that returns a vector of floats that represent the vertices of the Voronoi diagram
-std::vector<float> getLineVertices(std::list<Segment_2> segments){
+std::vector<float> getVoronoiVertices(std::list<Segment_2> segments){
     std::vector<float> vertices;
     for (const Segment_2& segment : segments) {
         // the source and target points of the segment are extracted
@@ -174,6 +180,42 @@ std::vector<float> getLineVertices(std::list<Segment_2> segments){
         vertices.push_back(voronoiEdgesColor[2]);
     }
     return vertices;
+}
+
+// function that return an array of floats that represent the vertices of the convex hull
+std::vector<float> getConvexHullVertices(std::vector<Point_2> points){
+    std::vector<std::size_t> ch_points(points.size()), out;
+    std::iota(ch_points.begin(), ch_points.end(), 0);
+    // the convex hull is computed
+    CGAL::convex_hull_2(ch_points.begin(), ch_points.end(), std::back_inserter(out), Convex_hull_traits_2(CGAL::make_property_map(points)));
+    std::vector<float> vertices;
+    for (std::size_t i : out) {
+        // the coordinates are converted to float and added to the vector
+        vertices.push_back(CGAL::to_double(points[i].x()));
+        vertices.push_back(CGAL::to_double(points[i].y()));
+    }
+
+    // vector for the edges of the convex hull
+    std::vector<float> edges;
+    // for all vertices in vertices
+    for (size_t i = 0; i < vertices.size(); i += 2) {
+        // the coordinates are added to the edges vector
+        edges.push_back(vertices[i]);
+        edges.push_back(vertices[i + 1]);
+        edges.push_back(0.0f);
+        edges.push_back(convexHullColor[0]);
+        edges.push_back(convexHullColor[1]);
+        edges.push_back(convexHullColor[2]);
+        // the next vertex is added to the edges vector
+        edges.push_back(vertices[(i + 2) % vertices.size()]);
+        edges.push_back(vertices[(i + 3) % vertices.size()]);
+        edges.push_back(0.0f);
+        edges.push_back(convexHullColor[0]);
+        edges.push_back(convexHullColor[1]);
+        edges.push_back(convexHullColor[2]);
+    }
+
+    return edges;
 }
 
 int main(int, char**) {
@@ -225,8 +267,14 @@ int main(int, char**) {
     Cropped_voronoi_from_delaunay voronoi(bbox);
     dt2.draw_dual(voronoi);
 
-    // an vector for the edge vertices is created
-    std::vector<float> lineVertices = getLineVertices(voronoi.m_cropped_vd);
+    // a vector with the edge vertices of the voronoi diagram is created
+    std::vector<float> lineVertices = getVoronoiVertices(voronoi.m_cropped_vd);
+
+    // a vector with the vertices of the convex hull is created
+    std::vector<float> convexHullVertices = getConvexHullVertices(points);
+
+    // the vertices of the convex hull are added to the line vertices
+    lineVertices.insert(lineVertices.end(), convexHullVertices.begin(), convexHullVertices.end());
 
     // buffer for the vertices
     unsigned int pointVAO, pointVBO;
@@ -235,7 +283,6 @@ int main(int, char**) {
     // buffer for the edges
     unsigned int lineVAO, lineVBO;
     setupBuffers(&lineVAO, &lineVBO, lineVertices);
-
 
     // the size of the points is set to 10.0f
     glPointSize(5.0f);
@@ -251,7 +298,6 @@ int main(int, char**) {
 
         // this tells the GPU to use the shader program
         glUseProgram(shaderProgram);
-
 
         // the vertices are drawn
         glBindVertexArray(pointVAO);
