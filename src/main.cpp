@@ -143,29 +143,53 @@ int main(int, char**) {
     float pointVertices[] = {
         0.0f, 0.5f, 0.0f,
         -0.5f, -0.5f, 0.0f,
-        0.5f, -0.5f, 0.0f
+        0.5f, -0.5f, 0.0f,
+        -0.5f, 0.5f, 0.0f,
     };
 
     // the points are stored in a vector of CGAL points
     std::vector<Point_2> points = getCGALPoints(pointVertices, sizeof(pointVertices) / sizeof(float));
 
-    // the points are printed
-    std::cout << "The points are: " << std::endl;
-    for (auto point : points){
-        std::cout << point << std::endl;
-    }
+    // the triangulation object is created
+    Delaunay_triangulation_2 dt2;
+    // the points are inserted in the triangulation (this will also compute the Voronoi diagram)
+    dt2.insert(points.begin(), points.end());
+    // a box from (-1,-1) to (1,1) is created, this will crop the Voronoi diagram
+    Iso_rectangle_2 bbox(-1,-1,1,1);
+    // the cropped Voronoi diagram is created
+    Cropped_voronoi_from_delaunay voronoi(bbox);
+    dt2.draw_dual(voronoi);
 
-    // this are the edges in the figure
-    float lineVertices[] = {
-        -1.0f, 0.0f, 0.0f,  
-        1.0f, 0.0f, 0.0f, 
-        0.0f, 1.0f, 0.0f, 
-        0.0f, -1.0f, 0.0f,  
-        1.0f, 1.0f, 0.0f,  
-        -1.0f, -1.0f, 0.0f,
-        -1.0f, 1.0f, 0.0f,  
-        1.0f, -1.0f, 0.0f,
-    };
+    // the number of vertices in the cropped Voronoi diagram is stored
+    // each segment has 2 vertices and each vertex has 3 coordinates
+    size_t numVertices = voronoi.m_cropped_vd.size() * 2 * 3;
+    // an array with the edge vertices is created
+    float lineVertices[numVertices];
+    // an index to store the vertices in the array
+    size_t index = 0;
+
+    // the segments are iterated
+    for (const Segment_2& segment : voronoi.m_cropped_vd) {
+        // the source and target points of the segment are extracted
+        Point_2 source = segment.source();
+        Point_2 target = segment.target();
+
+        // the coordinates are converted to float
+        float sourceX = CGAL::to_double(source.x());
+        float sourceY = CGAL::to_double(source.y());
+        float targetX = CGAL::to_double(target.x());
+        float targetY = CGAL::to_double(target.y());
+
+        // the source point is added to the array
+        lineVertices[index++] = sourceX;
+        lineVertices[index++] = sourceY;
+        lineVertices[index++] = 0.0f;
+
+        // the target point is added to the array
+        lineVertices[index++] = targetX;
+        lineVertices[index++] = targetY;
+        lineVertices[index++] = 0.0f;
+    }
 
     // buffer for the vertices
     unsigned int pointVAO, pointVBO;
