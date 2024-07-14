@@ -241,7 +241,7 @@ int main(int, char**) {
 
     // generate random points
     std::vector<float> pointVertices;
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 50; i++) {
         float x = -1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (2.0f)));
         float y = -1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (2.0f)));
         // position
@@ -267,8 +267,14 @@ int main(int, char**) {
     Cropped_voronoi_from_delaunay voronoi(bbox);
     dt2.draw_dual(voronoi);
 
+    // vector for the line vertices
+    std::vector<float> lineVertices;
+
     // a vector with the edge vertices of the voronoi diagram is created
-    std::vector<float> lineVertices = getVoronoiVertices(voronoi.m_cropped_vd);
+    std::vector<float> voronoiVertices = getVoronoiVertices(voronoi.m_cropped_vd);
+
+    // the vertices of the voronoi diagram are added to the line vertices
+    lineVertices.insert(lineVertices.end(), voronoiVertices.begin(), voronoiVertices.end());
 
     // a vector with the vertices of the convex hull is created
     std::vector<float> convexHullVertices = getConvexHullVertices(points);
