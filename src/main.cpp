@@ -1,3 +1,5 @@
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
 #include "glad.h"
 #include <GLFW/glfw3.h>
@@ -149,6 +151,9 @@ std::vector<float> getLineVertices(std::list<Segment_2> segments){
 }
 
 int main(int, char**) {
+    // Seed the random number generator with the current time
+    srand(static_cast<unsigned int>(time(NULL)));
+
     // Initialize window and context
     GLFWwindow* window = initWindowAndContext();
     // if window or context initialization failed, return -1
@@ -157,14 +162,24 @@ int main(int, char**) {
     // Create shader program
     unsigned int shaderProgram = createShaderProgram(vertexShaderSource, fragmentShaderSource);
 
-    // this are the vertices in the figure
-    std::vector<float> pointVertices = {
-        0.0f, 0.0f, 0.0f,
-        0.5f, 0.5f, 0.0f,
-        -0.5f, 0.5f, 0.0f,
-        0.5f, -0.5f, 0.0f,
-        -0.5f, -0.5f, 0.0f,
-    };
+    // // this are the vertices in the figure
+    // std::vector<float> pointVertices = {
+    //     0.0f, 0.0f, 0.0f,
+    //     0.5f, 0.5f, 0.0f,
+    //     -0.5f, 0.5f, 0.0f,
+    //     0.5f, -0.5f, 0.0f,
+    //     -0.5f, -0.5f, 0.0f,
+    // };
+
+    // generate random points
+    std::vector<float> pointVertices;
+    for (int i = 0; i < 10; i++) {
+        float x = -1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (2.0f)));
+        float y = -1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (2.0f)));
+        pointVertices.push_back(x);
+        pointVertices.push_back(y);
+        pointVertices.push_back(0.0f);
+    }
 
     // the points are stored in a vector of CGAL points
     std::vector<Point_2> points = getCGALPoints(pointVertices);
@@ -192,7 +207,7 @@ int main(int, char**) {
 
 
     // the size of the points is set to 10.0f
-    glPointSize(10.0f);
+    glPointSize(5.0f);
 
     // the background color is set to purple
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
