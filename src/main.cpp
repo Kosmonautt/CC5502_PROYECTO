@@ -9,6 +9,7 @@
 #include <CGAL/convex_hull_2.h>
 #include <CGAL/Convex_hull_traits_adapter_2.h>
 #include <CGAL/property_map.h>
+#include <CGAL/Polygon_2.h>
 #include <iterator>
 
 typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
@@ -19,6 +20,7 @@ typedef K::Ray_2 Ray_2;
 typedef K::Line_2 Line_2;
 typedef CGAL::Delaunay_triangulation_2<K>  Delaunay_triangulation_2;
 typedef CGAL::Convex_hull_traits_adapter_2<K, CGAL::Pointer_property_map<Point_2>::type > Convex_hull_traits_2;
+typedef CGAL::Polygon_2<K> Polygon_2;
 
 // the color of the input points (red)
 float inputPointsColor[3] = {1.0f, 0.0f, 0.0f};
@@ -212,23 +214,6 @@ std::pair<std::vector<float>, std::vector<float>> getProcessedData(std::vector<f
         voronoiEdgesGLAD.push_back(voronoiEdgesColor[2]);
     }
 
-    // the vertices of the Voronoi diagram are added to the edges vector
-    for (const Point_2& vertex : voronoiVerticesCGAL) {
-        // if the x or y coordinate is in the bounding box, the vertex is not added
-        if (vertex.x() == -1.0 || vertex.x() == 1.0 || vertex.y() == -1.0 || vertex.y() == 1.0) {
-            continue;
-        }
-        // the vertex is added to the edges vector
-        // position
-        voronoiVerticesGLAD.push_back(CGAL::to_double(vertex.x()));
-        voronoiVerticesGLAD.push_back(CGAL::to_double(vertex.y()));
-        voronoiVerticesGLAD.push_back(0.0f);
-        // color
-        voronoiVerticesGLAD.push_back(candidatePointsColor[0]);
-        voronoiVerticesGLAD.push_back(candidatePointsColor[1]);
-        voronoiVerticesGLAD.push_back(candidatePointsColor[2]);
-    }
-
     // 2- convex hull
     std::vector<std::size_t> ch_points(inputPointsCGAL.size()), out;
     std::iota(ch_points.begin(), ch_points.end(), 0);
@@ -236,11 +221,15 @@ std::pair<std::vector<float>, std::vector<float>> getProcessedData(std::vector<f
     CGAL::convex_hull_2(ch_points.begin(), ch_points.end(), std::back_inserter(out), Convex_hull_traits_2(CGAL::make_property_map(inputPointsCGAL)));
     // vector for the vertices of the convex hull, only with the x and y coordinates
     std::vector<float> convexHullVerticesXY;
+    // a polygon is created with the convex hull vertices
+    Polygon_2 ch;
     // for all vertices in out
     for (std::size_t i : out) {
         // the coordinates are converted to float and added to the vector
         convexHullVerticesXY.push_back(CGAL::to_double(inputPointsCGAL[i].x()));
         convexHullVerticesXY.push_back(CGAL::to_double(inputPointsCGAL[i].y()));
+        // the vertex is added to the polygon
+        ch.push_back(inputPointsCGAL[i]);
     }
     // vector for the edges of the convex hull
     std::vector<float> convexHullEdgesGLAD;
@@ -260,6 +249,23 @@ std::pair<std::vector<float>, std::vector<float>> getProcessedData(std::vector<f
         convexHullEdgesGLAD.push_back(convexHullColor[0]);
         convexHullEdgesGLAD.push_back(convexHullColor[1]);
         convexHullEdgesGLAD.push_back(convexHullColor[2]);
+    }
+
+    // the candidate vertices of the Voronoi diagram are added to the edges vector
+    for (const Point_2& vertex : voronoiVerticesCGAL) {
+        // if vertex is inside the convex hull, it's added to the edges vector
+        // here the opposite is checked so points in the boundary are also added
+        if (!ch.has_on_unbounded_side(vertex)) {
+            // the vertex is added to the edges vector
+            // position
+            voronoiVerticesGLAD.push_back(CGAL::to_double(vertex.x()));
+            voronoiVerticesGLAD.push_back(CGAL::to_double(vertex.y()));
+            voronoiVerticesGLAD.push_back(0.0f);
+            // color
+            voronoiVerticesGLAD.push_back(candidatePointsColor[0]);
+            voronoiVerticesGLAD.push_back(candidatePointsColor[1]);
+            voronoiVerticesGLAD.push_back(candidatePointsColor[2]);
+        }
     }
 
     // to GLAD
