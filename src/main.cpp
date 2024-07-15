@@ -165,7 +165,7 @@ std::vector<Point_2> getCGALPoints(std::vector<float> vertices){
 
 // function that receves a vector of points gladPoints and calculates the Voronoi diagram, the convex hull and the largest empty circle,
 // then returns two vectors of floats that represent the vertices and edges of the whole figure
-std::pair<std::vector<float>, std::vector<float>> getProcessedData(std::vector<float> inputPointsGLAD) {
+std::tuple<std::vector<float>, std::vector<float>, std::vector<float>> getLargestEmptyCircle(std::vector<float> inputPointsGLAD) {
     // this vector will hold the GLAD output points vertices
     std::vector<float> outputPointsVerticesGLAD;
     // this vector will hold the GLAD output edges vertices
@@ -336,6 +336,43 @@ std::pair<std::vector<float>, std::vector<float>> getProcessedData(std::vector<f
     voronoiVerticesGLAD.push_back(largestEmptyCircleColor[1]);
     voronoiVerticesGLAD.push_back(largestEmptyCircleColor[2]);
 
+    // the vertices of the largest empty circle are stored a new vector
+    std::vector<float> largestEmptyCircleVerticesGLAD;
+    // the number of segments that will be used to draw the largest empty circle
+    int N = 40;
+    // the angle between each segment
+    float angleIncrement = (2.0f * M_PI) / N;
+
+    // for all segments
+    for (int i = 0; i < N; i++) {
+        // the angle is calculated
+        float angle = i * angleIncrement;
+        // the x and y coordinates of the segment are calculated
+        float x = CGAL::to_double(center.x()) + radius * std::cos(angle);
+        float y = CGAL::to_double(center.y()) + radius * std::sin(angle);
+        // the coordinates are added to the vector
+        largestEmptyCircleVerticesGLAD.push_back(x);
+        largestEmptyCircleVerticesGLAD.push_back(y);
+        largestEmptyCircleVerticesGLAD.push_back(0.0f);
+        // the color of the edges is set
+        largestEmptyCircleVerticesGLAD.push_back(largestEmptyCircleColor[0]);
+        largestEmptyCircleVerticesGLAD.push_back(largestEmptyCircleColor[1]);
+        largestEmptyCircleVerticesGLAD.push_back(largestEmptyCircleColor[2]);
+        // the next angle is calculated
+        angle = (i + 1) * angleIncrement;
+        // the x and y coordinates of the segment are calculated
+        x = CGAL::to_double(center.x()) + radius * std::cos(angle);
+        y = CGAL::to_double(center.y()) + radius * std::sin(angle);
+        // the coordinates are added to the vector
+        largestEmptyCircleVerticesGLAD.push_back(x);
+        largestEmptyCircleVerticesGLAD.push_back(y);
+        largestEmptyCircleVerticesGLAD.push_back(0.0f);
+        // the color of the edges is set
+        largestEmptyCircleVerticesGLAD.push_back(largestEmptyCircleColor[0]);
+        largestEmptyCircleVerticesGLAD.push_back(largestEmptyCircleColor[1]);
+        largestEmptyCircleVerticesGLAD.push_back(largestEmptyCircleColor[2]);
+    }
+
     // to GLAD
     // vertices
     // the original points are added to the output points vertices
@@ -349,7 +386,7 @@ std::pair<std::vector<float>, std::vector<float>> getProcessedData(std::vector<f
     // the edges of the convex hull are added to the output edges vertices
     outputEdgesVerticesGLAD.insert(outputEdgesVerticesGLAD.end(), convexHullEdgesGLAD.begin(), convexHullEdgesGLAD.end());
 
-    return {outputPointsVerticesGLAD, outputEdgesVerticesGLAD};
+    return std::make_tuple(outputPointsVerticesGLAD, outputEdgesVerticesGLAD, largestEmptyCircleVerticesGLAD);
 }
 
 
@@ -391,14 +428,18 @@ int main(int, char**) {
 
     // vector for the line vertices
     std::vector<float> lineVertices;
+    // vector for the largest empty circle vertices
+    std::vector<float> circleVertices;
 
     // the processed data is obtained
-    std::pair<std::vector<float>, std::vector<float>> processedData = getProcessedData(pointVertices);
+    std::tuple<std::vector<float>, std::vector<float>, std::vector<float>> largestEmptyCircle = getLargestEmptyCircle(pointVertices);
 
     // the points vertices are set
-    pointVertices = processedData.first;
+    pointVertices = std::get<0>(largestEmptyCircle);
     // the edges vertices are set
-    lineVertices = processedData.second;
+    lineVertices = std::get<1>(largestEmptyCircle);
+    // the largest empty circle vertices are set
+    circleVertices = std::get<2>(largestEmptyCircle);
 
     // buffer for the vertices
     unsigned int pointVAO, pointVBO;
@@ -407,6 +448,10 @@ int main(int, char**) {
     // buffer for the edges
     unsigned int lineVAO, lineVBO;
     setupBuffers(&lineVAO, &lineVBO, lineVertices);
+
+    // buffer for the largest empty circle
+    unsigned int circleVAO, circleVBO;
+    setupBuffers(&circleVAO, &circleVBO, circleVertices);
 
     // the size of the points is set to 10.0f
     glPointSize(5.0f);
@@ -431,6 +476,10 @@ int main(int, char**) {
         glBindVertexArray(lineVAO);
         glDrawArrays(GL_LINES, 0, lineVertices.size() / 6);
 
+        // the largest empty circle is drawn
+        glBindVertexArray(circleVAO);
+        glDrawArrays(GL_LINES, 0, circleVertices.size() / 6);
+
         glfwSwapBuffers(window);
     }
 
@@ -439,6 +488,8 @@ int main(int, char**) {
     glDeleteBuffers(1, &pointVBO);
     glDeleteVertexArrays(1, &lineVAO);
     glDeleteBuffers(1, &lineVBO);
+    glDeleteVertexArrays(1, &circleVAO);
+    glDeleteBuffers(1, &circleVBO);
     glDeleteProgram(shaderProgram);
     glfwTerminate();
     return 0;
