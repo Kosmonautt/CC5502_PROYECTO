@@ -10,6 +10,7 @@
 #include <CGAL/Convex_hull_traits_adapter_2.h>
 #include <CGAL/property_map.h>
 #include <CGAL/Polygon_2.h>
+#include <CGAL/squared_distance_2.h>
 #include <iterator>
 
 typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
@@ -30,6 +31,8 @@ float voronoiEdgesColor[3] = {0.0f, 1.0f, 0.0f};
 float convexHullColor[3] = {0.0f, 0.0f, 1.0f};
 // the color of the candidate points (white)
 float candidatePointsColor[3] = {1.0f, 1.0f, 1.0f};
+// the color of the largest empty circle (orange)
+float largestEmptyCircleColor[3] = {1.0f, 0.5f, 0.0f};
 
 // vertex shader source
 const char* vertexShaderSource = R"glsl(
@@ -295,9 +298,43 @@ std::pair<std::vector<float>, std::vector<float>> getProcessedData(std::vector<f
                 voronoiVerticesGLAD.push_back(candidatePointsColor[1]);
                 voronoiVerticesGLAD.push_back(candidatePointsColor[2]);
                 // the vertex is added to the candidate points vector
+                candidatePoints.push_back(*p);
             }
         }
     }
+
+    // 4- largest empty circle
+    // the largest empty circle is computed
+    // the center and squared radius of the largest empty circle are stored in the variables
+    Point_2 center;
+    K::FT squared_radius = 0;
+
+    // for all candidate points
+    for (const Point_2& candidatePoint : candidatePoints) {
+        // the nearest neighbor of the candidate point is stored in the nearest_neighbor variable
+        Point_2 nearest_neighbor = dt2.nearest_vertex(candidatePoint)->point();
+        // the squared distance between the candidate point and the nearest neighbor is stored in the squared_distance variable
+        K::FT squared_distance = CGAL::squared_distance(candidatePoint, nearest_neighbor);
+        // if the squared distance is greater than the squared radius
+        if (squared_distance > squared_radius) {
+            // the squared radius is set to the squared distance
+            squared_radius = squared_distance;
+            // the center is set to the candidate point
+            center = candidatePoint;
+        }
+    }
+
+    // the largest empty circle is drawn
+    // the squared radius is converted to float
+    float radius = std::sqrt(CGAL::to_double(squared_radius));
+    // the center is converted to float and added to the vector
+    voronoiVerticesGLAD.push_back(CGAL::to_double(center.x()));
+    voronoiVerticesGLAD.push_back(CGAL::to_double(center.y()));
+    voronoiVerticesGLAD.push_back(0.0f);
+    // the color of the edges is set
+    voronoiVerticesGLAD.push_back(largestEmptyCircleColor[0]);
+    voronoiVerticesGLAD.push_back(largestEmptyCircleColor[1]);
+    voronoiVerticesGLAD.push_back(largestEmptyCircleColor[2]);
 
     // to GLAD
     // vertices
