@@ -212,11 +212,6 @@ std::pair<std::vector<float>, std::vector<float>> getProcessedData(std::vector<f
         voronoiEdgesGLAD.push_back(voronoiEdgesColor[2]);
     }
 
-    // print all the voronoi vertices
-    for (const Point_2& vertex : voronoiVerticesCGAL) {
-        std::cout << vertex << std::endl;
-    }
-
     // the vertices of the Voronoi diagram are added to the edges vector
     for (const Point_2& vertex : voronoiVerticesCGAL) {
         // if the x or y coordinate is in the bounding box, the vertex is not added
@@ -234,51 +229,55 @@ std::pair<std::vector<float>, std::vector<float>> getProcessedData(std::vector<f
         voronoiVerticesGLAD.push_back(candidatePointsColor[2]);
     }
 
+    // 2- convex hull
+    std::vector<std::size_t> ch_points(inputPointsCGAL.size()), out;
+    std::iota(ch_points.begin(), ch_points.end(), 0);
+    // the convex hull is computed
+    CGAL::convex_hull_2(ch_points.begin(), ch_points.end(), std::back_inserter(out), Convex_hull_traits_2(CGAL::make_property_map(inputPointsCGAL)));
+    // vector for the vertices of the convex hull, only with the x and y coordinates
+    std::vector<float> convexHullVerticesXY;
+    // for all vertices in out
+    for (std::size_t i : out) {
+        // the coordinates are converted to float and added to the vector
+        convexHullVerticesXY.push_back(CGAL::to_double(inputPointsCGAL[i].x()));
+        convexHullVerticesXY.push_back(CGAL::to_double(inputPointsCGAL[i].y()));
+    }
+    // vector for the edges of the convex hull
+    std::vector<float> convexHullEdgesGLAD;
+    // for all vertices in convexHullVerticesXY
+    for (size_t i = 0; i < convexHullVerticesXY.size(); i += 2) {
+        // the coordinates are added to the edges vector
+        convexHullEdgesGLAD.push_back(convexHullVerticesXY[i]);
+        convexHullEdgesGLAD.push_back(convexHullVerticesXY[i + 1]);
+        convexHullEdgesGLAD.push_back(0.0f);
+        convexHullEdgesGLAD.push_back(convexHullColor[0]);
+        convexHullEdgesGLAD.push_back(convexHullColor[1]);
+        convexHullEdgesGLAD.push_back(convexHullColor[2]);
+        // the next vertex is added to the edges vector
+        convexHullEdgesGLAD.push_back(convexHullVerticesXY[(i + 2) % convexHullVerticesXY.size()]);
+        convexHullEdgesGLAD.push_back(convexHullVerticesXY[(i + 3) % convexHullVerticesXY.size()]);
+        convexHullEdgesGLAD.push_back(0.0f);
+        convexHullEdgesGLAD.push_back(convexHullColor[0]);
+        convexHullEdgesGLAD.push_back(convexHullColor[1]);
+        convexHullEdgesGLAD.push_back(convexHullColor[2]);
+    }
+
+    // to GLAD
+    // vertices
     // the original points are added to the output points vertices
     outputPointsVerticesGLAD.insert(outputPointsVerticesGLAD.end(), inputPointsGLAD.begin(), inputPointsGLAD.end());
     // the vertices of the Voronoi diagram are added to the output points vertices
     outputPointsVerticesGLAD.insert(outputPointsVerticesGLAD.end(), voronoiVerticesGLAD.begin(), voronoiVerticesGLAD.end());
+
+    // edges
     // the edges of the Voronoi diagram are added to the output edges vertices
     outputEdgesVerticesGLAD.insert(outputEdgesVerticesGLAD.end(), voronoiEdgesGLAD.begin(), voronoiEdgesGLAD.end());
+    // the edges of the convex hull are added to the output edges vertices
+    outputEdgesVerticesGLAD.insert(outputEdgesVerticesGLAD.end(), convexHullEdgesGLAD.begin(), convexHullEdgesGLAD.end());
 
     return {outputPointsVerticesGLAD, outputEdgesVerticesGLAD};
 }
 
-// // function that return an array of floats that represent the vertices of the convex hull
-// std::vector<float> getConvexHullEdges(std::vector<Point_2> points){
-//     std::vector<std::size_t> ch_points(points.size()), out;
-//     std::iota(ch_points.begin(), ch_points.end(), 0);
-//     // the convex hull is computed
-//     CGAL::convex_hull_2(ch_points.begin(), ch_points.end(), std::back_inserter(out), Convex_hull_traits_2(CGAL::make_property_map(points)));
-//     std::vector<float> vertices;
-//     for (std::size_t i : out) {
-//         // the coordinates are converted to float and added to the vector
-//         vertices.push_back(CGAL::to_double(points[i].x()));
-//         vertices.push_back(CGAL::to_double(points[i].y()));
-//     }
-
-//     // vector for the edges of the convex hull
-//     std::vector<float> edges;
-//     // for all vertices in vertices
-//     for (size_t i = 0; i < vertices.size(); i += 2) {
-//         // the coordinates are added to the edges vector
-//         edges.push_back(vertices[i]);
-//         edges.push_back(vertices[i + 1]);
-//         edges.push_back(0.0f);
-//         edges.push_back(convexHullColor[0]);
-//         edges.push_back(convexHullColor[1]);
-//         edges.push_back(convexHullColor[2]);
-//         // the next vertex is added to the edges vector
-//         edges.push_back(vertices[(i + 2) % vertices.size()]);
-//         edges.push_back(vertices[(i + 3) % vertices.size()]);
-//         edges.push_back(0.0f);
-//         edges.push_back(convexHullColor[0]);
-//         edges.push_back(convexHullColor[1]);
-//         edges.push_back(convexHullColor[2]);
-//     }
-
-//     return edges;
-// }
 
 int main(int, char**) {
     // Seed the random number generator with the current time
