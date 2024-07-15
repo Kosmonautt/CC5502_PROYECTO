@@ -411,9 +411,14 @@ int main(int, char**) {
     //     -0.5f, -0.5f, 0.0f, inputPointsColor[0], inputPointsColor[1], inputPointsColor[2],
     // };
 
+    // the user can input the number of points
+    int n;
+    std::cout << "Enter the number of points: ";
+    std::cin >> n;
+
     // vector for the points vertices
     std::vector<float> pointVertices;
-    for (int i = 0; i < 25; i++) {
+    for (int i = 0; i < n; i++) {
         float x = -1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (2.0f)));
         float y = -1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (2.0f)));
         // position
