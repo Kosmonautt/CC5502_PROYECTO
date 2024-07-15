@@ -233,6 +233,8 @@ std::pair<std::vector<float>, std::vector<float>> getProcessedData(std::vector<f
     }
     // vector for the edges of the convex hull
     std::vector<float> convexHullEdgesGLAD;
+    // vector of segments that represent the edges of the convex hull
+    std::vector<Segment_2> chSegments;
     // for all vertices in convexHullVerticesXY
     for (size_t i = 0; i < convexHullVerticesXY.size(); i += 2) {
         // the coordinates are added to the edges vector
@@ -249,8 +251,13 @@ std::pair<std::vector<float>, std::vector<float>> getProcessedData(std::vector<f
         convexHullEdgesGLAD.push_back(convexHullColor[0]);
         convexHullEdgesGLAD.push_back(convexHullColor[1]);
         convexHullEdgesGLAD.push_back(convexHullColor[2]);
+        // the segment is added to the segments vector
+        chSegments.push_back(Segment_2(Point_2(convexHullVerticesXY[i], convexHullVerticesXY[i + 1]), Point_2(convexHullVerticesXY[(i + 2) % convexHullVerticesXY.size()], convexHullVerticesXY[(i + 3) % convexHullVerticesXY.size()])));
     }
 
+    // 3- candidate points
+    // Point_2 vector for the candidate points
+    std::vector<Point_2> candidatePoints;
     // the candidate vertices of the Voronoi diagram are added to the edges vector
     for (const Point_2& vertex : voronoiVerticesCGAL) {
         // if vertex is inside the convex hull, it's added to the edges vector
@@ -265,6 +272,30 @@ std::pair<std::vector<float>, std::vector<float>> getProcessedData(std::vector<f
             voronoiVerticesGLAD.push_back(candidatePointsColor[0]);
             voronoiVerticesGLAD.push_back(candidatePointsColor[1]);
             voronoiVerticesGLAD.push_back(candidatePointsColor[2]);
+            /// the vertex is added to the candidate points vector
+            candidatePoints.push_back(vertex);
+        }
+    }
+
+    // for all segments in the convex hull
+    for (const Segment_2& chSegment : chSegments) {
+        // for all segments in the cropped Voronoi diagram
+        for (const Segment_2& voronoiSegment : voronoi.m_cropped_vd) {
+            // the intersection of the segments is stored in obj which supports multiple types
+            CGAL::Object obj = CGAL::intersection(chSegment, voronoiSegment);
+            // if obj is a point, it is stored in the list
+            const Point_2* p = CGAL::object_cast<Point_2>(&obj);
+            if (p) {
+                // the coordinates are converted to float and added to the vector
+                voronoiVerticesGLAD.push_back(CGAL::to_double(p->x()));
+                voronoiVerticesGLAD.push_back(CGAL::to_double(p->y()));
+                voronoiVerticesGLAD.push_back(0.0f);
+                // the color of the edges is set
+                voronoiVerticesGLAD.push_back(candidatePointsColor[0]);
+                voronoiVerticesGLAD.push_back(candidatePointsColor[1]);
+                voronoiVerticesGLAD.push_back(candidatePointsColor[2]);
+                // the vertex is added to the candidate points vector
+            }
         }
     }
 
@@ -308,7 +339,7 @@ int main(int, char**) {
 
     // vector for the points vertices
     std::vector<float> pointVertices;
-    for (int i = 0; i < 50; i++) {
+    for (int i = 0; i < 25; i++) {
         float x = -1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (2.0f)));
         float y = -1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (2.0f)));
         // position
