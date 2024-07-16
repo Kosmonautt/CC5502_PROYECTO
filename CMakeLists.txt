@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.16.3)
 set(CMAKE_CXX_STANDARD 17)
 
 # Project name
-project(VoronoiVisualization)
+project(LargestEmptyCircle)
 
 # Find CGAL
 find_package(CGAL REQUIRED)
@@ -12,14 +12,14 @@ find_package(CGAL REQUIRED)
 find_package(OpenGL REQUIRED)
 
 # Create the executable for box boundary
-add_executable(VoronoiVisualization 
+add_executable(LargestEmptyCircle 
     src/main.cpp
     src/glad.h
     src/glad.c
 )
 
 # Link CGAL to the executable
-target_link_libraries(VoronoiVisualization
+target_link_libraries(LargestEmptyCircle
     glfw
     OpenGL::GL
     CGAL::CGAL
