@@ -1,0 +1,7 @@
+[out:json][timeout:25];
+// Find the area ID for San Miguel
+area[name="San Miguel"][admin_level=8]["dpachile:id"="13130"]->.cityArea;
+// gather results for schools within this area
+nwr(area.cityArea)["amenity"="school"];
+// print results for schools
+out geom;

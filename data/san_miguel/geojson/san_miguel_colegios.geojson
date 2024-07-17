@@ -1,0 +1,2692 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2024-07-16T00:24:11Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/8160267",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "2895",
+        "addr:street": "Ramón Barros Luco",
+        "amenity": "school",
+        "contact:email": "gerencia@subercaseauxcollege.cl",
+        "name": "Colegio Subercaseaux College",
+        "operator": "4",
+        "school:type": "10;110;310",
+        "type": "multipolygon"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.655096,
+              -33.4800423
+            ],
+            [
+              -70.6556512,
+              -33.4799394
+            ],
+            [
+              -70.655737,
+              -33.4801385
+            ],
+            [
+              -70.6551617,
+              -33.4802414
+            ],
+            [
+              -70.655096,
+              -33.4800423
+            ]
+          ]
+        ]
+      },
+      "id": "relation/8160267"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/221560127",
+        "addr:city": "San Miguel",
+        "addr:country": "CL",
+        "addr:housenumber": "3696",
+        "addr:street": "Gran Avenida José Miguel Carrera",
+        "amenity": "school",
+        "capacity": "1080",
+        "denomination": "catholic",
+        "fee": "yes",
+        "name": "Instituto Miguel León Prado",
+        "religion": "christian",
+        "website": "https://www.imlp.cl/",
+        "wikidata": "Q101243264"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.649068,
+              -33.4880704
+            ],
+            [
+              -70.6494826,
+              -33.4879938
+            ],
+            [
+              -70.6497143,
+              -33.4879509
+            ],
+            [
+              -70.6503697,
+              -33.4878298
+            ],
+            [
+              -70.6503867,
+              -33.4878939
+            ],
+            [
+              -70.6504287,
+              -33.4880517
+            ],
+            [
+              -70.6504345,
+              -33.4880738
+            ],
+            [
+              -70.6505331,
+              -33.4884446
+            ],
+            [
+              -70.6505762,
+              -33.4886069
+            ],
+            [
+              -70.6502264,
+              -33.4886715
+            ],
+            [
+              -70.6502802,
+              -33.4888738
+            ],
+            [
+              -70.6497424,
+              -33.4889732
+            ],
+            [
+              -70.6496864,
+              -33.4887625
+            ],
+            [
+              -70.6492723,
+              -33.4888391
+            ],
+            [
+              -70.6492529,
+              -33.4887661
+            ],
+            [
+              -70.6492387,
+              -33.4887126
+            ],
+            [
+              -70.6491556,
+              -33.4884001
+            ],
+            [
+              -70.6491485,
+              -33.4883732
+            ],
+            [
+              -70.649068,
+              -33.4880704
+            ]
+          ]
+        ]
+      },
+      "id": "way/221560127"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/221560690",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "1442",
+        "addr:street": "Florencia",
+        "amenity": "school",
+        "name": "Escuela de la Industria Gráfica Héctor Gómez Matus",
+        "website": "https://educagrafica.cl/"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.657461,
+              -33.4899698
+            ],
+            [
+              -70.6572519,
+              -33.4893662
+            ],
+            [
+              -70.6581423,
+              -33.4891359
+            ],
+            [
+              -70.6586509,
+              -33.4904888
+            ],
+            [
+              -70.6577123,
+              -33.4907159
+            ],
+            [
+              -70.657461,
+              -33.4899698
+            ]
+          ]
+        ]
+      },
+      "id": "way/221560690"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/272714296",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "2820",
+        "addr:street": "Gran Avenida José Miguel Carrera",
+        "amenity": "school",
+        "contact:email": "aspaut@aspaut.cl",
+        "contact:phone": "+56 2 5515522",
+        "name": "Escuela Especial Magdalena Ávalos Cruz",
+        "operator": "Asociación Chilena de Padres y Amigos de los Autistas",
+        "school:type": "216",
+        "source": "Reconocimiento cartográfico 2016 por KG"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6476262,
+              -33.4802687
+            ],
+            [
+              -70.648172,
+              -33.4803216
+            ],
+            [
+              -70.6483421,
+              -33.480338
+            ],
+            [
+              -70.6483668,
+              -33.4804197
+            ],
+            [
+              -70.6483573,
+              -33.4804876
+            ],
+            [
+              -70.6473925,
+              -33.4803943
+            ],
+            [
+              -70.6474301,
+              -33.4801237
+            ],
+            [
+              -70.6476435,
+              -33.4801443
+            ],
+            [
+              -70.6476262,
+              -33.4802687
+            ]
+          ]
+        ]
+      },
+      "id": "way/272714296"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/448177187",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "3548",
+        "addr:street": "Gran Avenida José Miguel Carrera",
+        "amenity": "school",
+        "building": "yes",
+        "contact:email": "cpsm@vtr.net",
+        "name": "Colegio Parroquial San Miguel",
+        "operator": "3",
+        "school:type": "10;110;310",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6497386,
+              -33.486535
+            ],
+            [
+              -70.6498206,
+              -33.486519
+            ],
+            [
+              -70.6500665,
+              -33.4864711
+            ],
+            [
+              -70.6502522,
+              -33.4871339
+            ],
+            [
+              -70.6494415,
+              -33.4872918
+            ],
+            [
+              -70.6492559,
+              -33.486629
+            ],
+            [
+              -70.6493395,
+              -33.4866127
+            ],
+            [
+              -70.6497386,
+              -33.486535
+            ]
+          ]
+        ]
+      },
+      "id": "way/448177187"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/450672781",
+        "amenity": "school",
+        "building": "yes",
+        "name": "Colegio Chile",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6549174,
+              -33.5008222
+            ],
+            [
+              -70.6549393,
+              -33.5008928
+            ],
+            [
+              -70.6545164,
+              -33.5009839
+            ],
+            [
+              -70.6545883,
+              -33.5012161
+            ],
+            [
+              -70.6544861,
+              -33.5012381
+            ],
+            [
+              -70.6543774,
+              -33.5008872
+            ],
+            [
+              -70.6545158,
+              -33.5008544
+            ],
+            [
+              -70.6545315,
+              -33.5009053
+            ],
+            [
+              -70.6549174,
+              -33.5008222
+            ]
+          ]
+        ]
+      },
+      "id": "way/450672781"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/450675828",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "5665",
+        "addr:street": "Gran Avenida José Miguel Carrera",
+        "amenity": "school",
+        "contact:email": "colegiogranavenida@hotmail.com",
+        "name": "Escuela Particular Gran Avenida",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6564239,
+              -33.5058671
+            ],
+            [
+              -70.6558296,
+              -33.5060232
+            ],
+            [
+              -70.6557818,
+              -33.5058967
+            ],
+            [
+              -70.6563761,
+              -33.5057406
+            ],
+            [
+              -70.6564239,
+              -33.5058671
+            ]
+          ]
+        ]
+      },
+      "id": "way/450675828"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/450864478",
+        "addr:housenumber": "4514",
+        "addr:street": "Gran Av.José M.Carrera",
+        "amenity": "school",
+        "building": "yes",
+        "contact:email": "scc@sancristobalcollege.cl",
+        "name": "Colegio San Cristóbal College",
+        "operator": "3",
+        "school:type": "10;110;310",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6524218,
+              -33.4953375
+            ],
+            [
+              -70.6524723,
+              -33.4955023
+            ],
+            [
+              -70.6523729,
+              -33.4955235
+            ],
+            [
+              -70.6523184,
+              -33.4955351
+            ],
+            [
+              -70.6522679,
+              -33.4953704
+            ],
+            [
+              -70.6524218,
+              -33.4953375
+            ]
+          ]
+        ]
+      },
+      "id": "way/450864478"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/451407863",
+        "amenity": "school",
+        "name": "R-Molino",
+        "phone": "28 507 0238",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6646435,
+              -33.511369
+            ],
+            [
+              -70.6647065,
+              -33.5115224
+            ],
+            [
+              -70.6645865,
+              -33.5115567
+            ],
+            [
+              -70.6645235,
+              -33.5114033
+            ],
+            [
+              -70.6646435,
+              -33.511369
+            ]
+          ]
+        ]
+      },
+      "id": "way/451407863"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/451427206",
+        "addr:street": "Carmen Mena",
+        "amenity": "school",
+        "building": "yes",
+        "name": "Liceo Politecnico San Luis",
+        "source": "Reconocimiento cortográfico de campo 2016 por KG"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6530746,
+              -33.5068732
+            ],
+            [
+              -70.6531411,
+              -33.5070869
+            ],
+            [
+              -70.6526291,
+              -33.5071976
+            ],
+            [
+              -70.6525627,
+              -33.5069838
+            ],
+            [
+              -70.6530746,
+              -33.5068732
+            ]
+          ]
+        ]
+      },
+      "id": "way/451427206"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/451427207",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "906",
+        "addr:street": "Carmen Mena",
+        "amenity": "school",
+        "contact:email": "esc466@gmail.com",
+        "name": "Escuela Básica Municipal",
+        "operator": "1",
+        "school:type": "10;110",
+        "source": "Reconocimiento cartográfico 2016 por KG."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6520443,
+              -33.5070675
+            ],
+            [
+              -70.6521533,
+              -33.5074047
+            ],
+            [
+              -70.6515573,
+              -33.5075385
+            ],
+            [
+              -70.6514484,
+              -33.5072013
+            ],
+            [
+              -70.6520443,
+              -33.5070675
+            ]
+          ]
+        ]
+      },
+      "id": "way/451427207"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/451427208",
+        "addr:street": "Carmen Mena",
+        "amenity": "school",
+        "name": "Colegio Tomás Moro",
+        "source": "Reconocimiento cortográfico de campo 2016 por KG"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6512172,
+              -33.5072712
+            ],
+            [
+              -70.6513116,
+              -33.5076112
+            ],
+            [
+              -70.650842,
+              -33.5077019
+            ],
+            [
+              -70.6510254,
+              -33.5083624
+            ],
+            [
+              -70.6508717,
+              -33.5083921
+            ],
+            [
+              -70.6506896,
+              -33.5077363
+            ],
+            [
+              -70.6505923,
+              -33.507755
+            ],
+            [
+              -70.6505504,
+              -33.507604
+            ],
+            [
+              -70.6504966,
+              -33.5074103
+            ],
+            [
+              -70.6512172,
+              -33.5072712
+            ]
+          ]
+        ]
+      },
+      "id": "way/451427208"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/451434632",
+        "addr:city": "San Miguel",
+        "addr:country": "CL",
+        "addr:housenumber": "818",
+        "addr:street": "Avenida Departamental",
+        "amenity": "school",
+        "name": "Colegio Religioso San Javier",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6471896,
+              -33.5054503
+            ],
+            [
+              -70.6473545,
+              -33.5059224
+            ],
+            [
+              -70.6470183,
+              -33.5059973
+            ],
+            [
+              -70.6469922,
+              -33.5054996
+            ],
+            [
+              -70.6471896,
+              -33.5054503
+            ]
+          ]
+        ]
+      },
+      "id": "way/451434632"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/451434634",
+        "amenity": "school",
+        "building": "yes",
+        "name": "Colegio Santa Margarita"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6447904,
+              -33.506023
+            ],
+            [
+              -70.6448357,
+              -33.5062885
+            ],
+            [
+              -70.6446622,
+              -33.506309
+            ],
+            [
+              -70.6446169,
+              -33.5060436
+            ],
+            [
+              -70.6447904,
+              -33.506023
+            ]
+          ]
+        ]
+      },
+      "id": "way/451434634"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/451439748",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "939",
+        "addr:street": "Carmen Mena",
+        "amenity": "school",
+        "contact:email": "wvergara@educaceas.cl",
+        "contact:phone": "+56 2 5213636",
+        "name": "Colegio Santo Cura De Ars",
+        "operator": "3",
+        "school:type": "10;110;310",
+        "source": "Reconocimiento cartográfico 2016 por KG."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6524582,
+              -33.5062617
+            ],
+            [
+              -70.6526058,
+              -33.506731
+            ],
+            [
+              -70.6518248,
+              -33.5069017
+            ],
+            [
+              -70.6516772,
+              -33.5064325
+            ],
+            [
+              -70.6524582,
+              -33.5062617
+            ]
+          ]
+        ]
+      },
+      "id": "way/451439748"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/504826859",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "1241",
+        "addr:street": "Soto Aguilar",
+        "amenity": "school",
+        "name": "Liceo Andrés Bello",
+        "wikidata": "Q5975050",
+        "wikimedia_commons": "Category:Liceo Andrés Bello (Santiago de Chile)",
+        "wikipedia": "es:Liceo Andrés Bello (San Miguel)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6533376,
+              -33.4865243
+            ],
+            [
+              -70.6527069,
+              -33.4866656
+            ],
+            [
+              -70.6524504,
+              -33.485869
+            ],
+            [
+              -70.653081,
+              -33.4857278
+            ],
+            [
+              -70.6533376,
+              -33.4865243
+            ]
+          ]
+        ]
+      },
+      "id": "way/504826859"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/567470930",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "2865",
+        "addr:street": "San Ignacio",
+        "amenity": "school",
+        "name": "Escuela de conductores Fenix"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6542053,
+              -33.4797499
+            ],
+            [
+              -70.654208,
+              -33.4799333
+            ],
+            [
+              -70.6539049,
+              -33.4799512
+            ],
+            [
+              -70.6539062,
+              -33.479865
+            ],
+            [
+              -70.6539076,
+              -33.4797745
+            ],
+            [
+              -70.6542053,
+              -33.4797499
+            ]
+          ]
+        ]
+      },
+      "id": "way/567470930"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/577517324",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "1530",
+        "addr:street": "San Nicolás",
+        "amenity": "school",
+        "name": "Escuela Particular Ecole Noel"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6630394,
+              -33.4975639
+            ],
+            [
+              -70.662683,
+              -33.49672
+            ],
+            [
+              -70.6629248,
+              -33.4966372
+            ],
+            [
+              -70.6631109,
+              -33.4970685
+            ],
+            [
+              -70.663075,
+              -33.4970897
+            ],
+            [
+              -70.6632492,
+              -33.4975022
+            ],
+            [
+              -70.6630394,
+              -33.4975639
+            ]
+          ]
+        ]
+      },
+      "id": "way/577517324"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/585008119",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "3023",
+        "addr:street": "San Ignacio",
+        "amenity": "school",
+        "name": "Jardín Infantil El Llano"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6543991,
+              -33.4810889
+            ],
+            [
+              -70.6544313,
+              -33.4811918
+            ],
+            [
+              -70.6542167,
+              -33.481241
+            ],
+            [
+              -70.6541872,
+              -33.4811358
+            ],
+            [
+              -70.6543991,
+              -33.4810889
+            ]
+          ]
+        ]
+      },
+      "id": "way/585008119"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/860693781",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "3592",
+        "addr:street": "Gran Avenida José Miguel Carrera",
+        "amenity": "school",
+        "contact:email": "ipsma@hma.cl",
+        "name": "Instituto Politécnico San Miguel Arcángel",
+        "operator": "3",
+        "school:type": "410;610",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6502053,
+              -33.4876096
+            ],
+            [
+              -70.6502341,
+              -33.4877115
+            ],
+            [
+              -70.6490287,
+              -33.4879723
+            ],
+            [
+              -70.64868,
+              -33.4865786
+            ],
+            [
+              -70.6490019,
+              -33.486516
+            ],
+            [
+              -70.6492985,
+              -33.486438
+            ],
+            [
+              -70.6493395,
+              -33.4866127
+            ],
+            [
+              -70.6492559,
+              -33.486629
+            ],
+            [
+              -70.6494415,
+              -33.4872918
+            ],
+            [
+              -70.6502522,
+              -33.4871339
+            ],
+            [
+              -70.6503699,
+              -33.4875782
+            ],
+            [
+              -70.6502053,
+              -33.4876096
+            ]
+          ]
+        ]
+      },
+      "id": "way/860693781"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/954105976",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "1509",
+        "addr:street": "Soto Aguilar",
+        "amenity": "school",
+        "name": "Escuela Llano Subercaseaux",
+        "phone": "+56224812757",
+        "website": "http://escuelallano.blogspot.cl"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6571183,
+              -33.4852072
+            ],
+            [
+              -70.6572847,
+              -33.4855982
+            ],
+            [
+              -70.6572705,
+              -33.4856205
+            ],
+            [
+              -70.6557632,
+              -33.4860155
+            ],
+            [
+              -70.6557191,
+              -33.4860035
+            ],
+            [
+              -70.6555717,
+              -33.4855816
+            ],
+            [
+              -70.6555783,
+              -33.4855673
+            ],
+            [
+              -70.655657,
+              -33.4855479
+            ],
+            [
+              -70.657086,
+              -33.4851946
+            ],
+            [
+              -70.6571183,
+              -33.4852072
+            ]
+          ]
+        ]
+      },
+      "id": "way/954105976"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1128007673",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "5047",
+        "addr:street": "San Jerónimo",
+        "amenity": "school",
+        "contact:email": "ccmdireccion@vtr.net",
+        "name": "Colegio Corazón De María",
+        "operator": "3",
+        "school:type": "10;110;310",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6577229,
+              -33.4980243
+            ],
+            [
+              -70.6567655,
+              -33.4983241
+            ],
+            [
+              -70.6565624,
+              -33.4978782
+            ],
+            [
+              -70.6572839,
+              -33.4976251
+            ],
+            [
+              -70.6573376,
+              -33.4977302
+            ],
+            [
+              -70.6575337,
+              -33.4976601
+            ],
+            [
+              -70.6577229,
+              -33.4980243
+            ]
+          ]
+        ]
+      },
+      "id": "way/1128007673"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1128007676",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "1520",
+        "addr:street": "Lazo",
+        "amenity": "school",
+        "name": "Escuela Villa San Miguel",
+        "operator": "1",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6634996,
+              -33.498254
+            ],
+            [
+              -70.6631167,
+              -33.4983728
+            ],
+            [
+              -70.6630373,
+              -33.4981975
+            ],
+            [
+              -70.6627431,
+              -33.4982832
+            ],
+            [
+              -70.6626941,
+              -33.4981917
+            ],
+            [
+              -70.6627384,
+              -33.4981742
+            ],
+            [
+              -70.6626264,
+              -33.4979172
+            ],
+            [
+              -70.6632545,
+              -33.4977205
+            ],
+            [
+              -70.6634996,
+              -33.498254
+            ]
+          ]
+        ]
+      },
+      "id": "way/1128007676"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1177965182",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "930",
+        "addr:street": "Avenida Berlín",
+        "amenity": "school",
+        "contact:email": "vfuenzalidar@colegiosantarosa.",
+        "name": "Colegio Santa Rosa",
+        "operator": "3",
+        "school:type": "10;110;310",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6490692,
+              -33.4940837
+            ],
+            [
+              -70.6497725,
+              -33.493721
+            ],
+            [
+              -70.650051,
+              -33.4942177
+            ],
+            [
+              -70.6491851,
+              -33.4944295
+            ],
+            [
+              -70.6490692,
+              -33.4940837
+            ]
+          ]
+        ]
+      },
+      "id": "way/1177965182"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1177965186",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "4047",
+        "addr:street": "Gaspar Banda",
+        "amenity": "school",
+        "name": "Liceo Betzabé Hormazábal De Alarcón",
+        "operator": "1",
+        "school:type": "110;310",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6565999,
+              -33.4895288
+            ],
+            [
+              -70.6570178,
+              -33.4908393
+            ],
+            [
+              -70.6569548,
+              -33.4908588
+            ],
+            [
+              -70.6569875,
+              -33.4909289
+            ],
+            [
+              -70.6562987,
+              -33.4910866
+            ],
+            [
+              -70.655813,
+              -33.4896962
+            ],
+            [
+              -70.6565999,
+              -33.4895288
+            ]
+          ]
+        ]
+      },
+      "id": "way/1177965186"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1177965188",
+        "addr:housenumber": "1303",
+        "addr:street": "Salesianos",
+        "amenity": "school",
+        "name": "Instituto Reg. De Educ. Adultos",
+        "operator": "1",
+        "school:type": "160;360;361;460;461",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.653081,
+              -33.4857278
+            ],
+            [
+              -70.6524504,
+              -33.485869
+            ],
+            [
+              -70.6524111,
+              -33.485759
+            ],
+            [
+              -70.6520753,
+              -33.485831
+            ],
+            [
+              -70.6519027,
+              -33.4852733
+            ],
+            [
+              -70.652864,
+              -33.4850832
+            ],
+            [
+              -70.653081,
+              -33.4857278
+            ]
+          ]
+        ]
+      },
+      "id": "way/1177965188"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1221344835",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "5950",
+        "addr:street": "Tercera Transversal",
+        "amenity": "school",
+        "name": "Escuela Territorio Antártico"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6623749,
+              -33.506854
+            ],
+            [
+              -70.6627232,
+              -33.507686
+            ],
+            [
+              -70.6621922,
+              -33.5078406
+            ],
+            [
+              -70.6618438,
+              -33.5070085
+            ],
+            [
+              -70.6623749,
+              -33.506854
+            ]
+          ]
+        ]
+      },
+      "id": "way/1221344835"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1282992647",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "1060",
+        "addr:street": "Álvarez de Toledo",
+        "amenity": "school",
+        "name": "Liceo Comercial Instituto Superior De Comercio De Chile"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6504905,
+              -33.4909295
+            ],
+            [
+              -70.6503323,
+              -33.4902304
+            ],
+            [
+              -70.6503977,
+              -33.4902174
+            ],
+            [
+              -70.6510159,
+              -33.4901064
+            ],
+            [
+              -70.6510377,
+              -33.4901007
+            ],
+            [
+              -70.6511477,
+              -33.4905179
+            ],
+            [
+              -70.6507427,
+              -33.4906879
+            ],
+            [
+              -70.6507936,
+              -33.4908176
+            ],
+            [
+              -70.6504905,
+              -33.4909295
+            ]
+          ]
+        ]
+      },
+      "id": "way/1282992647"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906402865",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "1580",
+        "addr:street": "Sexta Avenida",
+        "amenity": "school",
+        "contact:email": "papelucho_esp@hotmail.com",
+        "name": "Escuela Especial Particular Papelucho",
+        "operator": "3",
+        "school:type": "214",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6663373,
+          -33.5068
+        ]
+      },
+      "id": "node/906402865"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906402910",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "1521",
+        "addr:street": "Séptima Avenida",
+        "amenity": "school",
+        "contact:email": "escuelahanselygretel@yahoo.com",
+        "name": "Escuela Particular Hansel Y Gretel",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6656674,
+          -33.5076758
+        ]
+      },
+      "id": "node/906402910"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421140",
+        "addr:housenumber": "666",
+        "addr:street": "Sebastopol",
+        "amenity": "school",
+        "contact:email": "laraiz191@yahoo.es",
+        "name": "Escuela Básica La Raíz Y La Espiga",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6451784,
+          -33.5149456
+        ]
+      },
+      "id": "node/906421140"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421150",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "6055",
+        "addr:street": "Santa Clara",
+        "amenity": "school",
+        "contact:email": "esmirna132@hotmail.com",
+        "name": "Princess Margaret College",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6457606,
+          -33.5131105
+        ]
+      },
+      "id": "node/906421150"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421232",
+        "addr:city": "San Miguel",
+        "addr:country": "CL",
+        "addr:housenumber": "1386",
+        "addr:street": "Novena Avenida",
+        "amenity": "school",
+        "contact:email": "cmgracia@ctcinternet.cl",
+        "name": "Colegio Manantial de San Miguel",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería",
+        "operator": "3",
+        "school:type": "10;110;310",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6636301,
+          -33.5109507
+        ]
+      },
+      "id": "node/906421232"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421247",
+        "addr:city": "San Miguel",
+        "addr:country": "CL",
+        "addr:housenumber": "5941",
+        "addr:street": "Avenida José Miguel Carrera",
+        "amenity": "school",
+        "contact:email": "colevascodegama@hotmail.com",
+        "name": "Colegio de Adultos Vasco de Gama",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería",
+        "operator": "3",
+        "school:type": "160;361",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6567943,
+          -33.5091852
+        ]
+      },
+      "id": "node/906421247"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421254",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "5941",
+        "addr:street": "Gran Avenida José Miguel Carrera",
+        "amenity": "school",
+        "contact:email": "psanluis@ctcreuna.cl",
+        "name": "Liceo Politécnico San Luis",
+        "operator": "3",
+        "school:type": "310;410;510;610",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6567809,
+          -33.5091494
+        ]
+      },
+      "id": "node/906421254"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421447",
+        "addr:housenumber": "1295",
+        "addr:street": "Avenida Lo Ovalle",
+        "amenity": "school",
+        "contact:email": "marianelacif@yahoo.com",
+        "name": "Escuela Básica Deutschland",
+        "operator": "3",
+        "school:type": "110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6410786,
+          -33.5177855
+        ]
+      },
+      "id": "node/906421447"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421468",
+        "addr:housenumber": "518",
+        "addr:street": "Bermann",
+        "amenity": "school",
+        "contact:email": "jjlcarrera@hotmail.com",
+        "name": "Liceo Comercial Javiera Y Jose L.Carrera",
+        "operator": "3",
+        "school:type": "410",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6376388,
+          -33.5154956
+        ]
+      },
+      "id": "node/906421468"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421495",
+        "addr:housenumber": "428",
+        "addr:street": "Santa Fé",
+        "amenity": "school",
+        "contact:email": "escuelasantafe@yahoo.es",
+        "name": "Escuela Básica Santa Fé",
+        "operator": "1",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6376888,
+          -33.5135756
+        ]
+      },
+      "id": "node/906421495"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421615",
+        "addr:city": "San Miguel",
+        "addr:country": "CL",
+        "addr:housenumber": "1046",
+        "addr:street": "Vargas Buston",
+        "amenity": "school",
+        "contact:email": "rayunparvulo@hotmail.com",
+        "name": "Escuela de Lenguaje Rayun",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería",
+        "operator": "3",
+        "school:type": "214",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.654528,
+          -33.5073458
+        ]
+      },
+      "id": "node/906421615"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421634",
+        "addr:housenumber": "3;5950",
+        "addr:street": "Tercera Transversal",
+        "amenity": "school",
+        "name": "Escuela Básica Territorio Antártico",
+        "operator": "1",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6620476,
+          -33.5055158
+        ]
+      },
+      "id": "node/906421634"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421653",
+        "addr:city": "San Miguel",
+        "addr:country": "CL",
+        "addr:housenumber": "1375",
+        "addr:street": "Lazo",
+        "amenity": "school",
+        "contact:email": "Escuelaamantu@hotmail.com",
+        "contact:phone": "+56 2 5248718;+56 9 90784438",
+        "name": "Escuela Especial Amantu",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería",
+        "operator": "3",
+        "school:type": "214",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6605329,
+          -33.498312
+        ]
+      },
+      "id": "node/906421653"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421654",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "1089",
+        "addr:street": "Pirámide",
+        "amenity": "school",
+        "contact:email": "colchile13@colegiochile.cl",
+        "name": "Escuela Particular Y Colegio Chile",
+        "operator": "3",
+        "school:type": "10;110;310",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6533987,
+          -33.5008865
+        ]
+      },
+      "id": "node/906421654"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421659",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "610",
+        "addr:street": "Miguel León Prado",
+        "amenity": "school",
+        "email": "esc.sta.catalina@hotmail.com",
+        "name": "Escuela Básica N°221 Santa Catalina de San Miguel",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6430394,
+          -33.5074756
+        ]
+      },
+      "id": "node/906421659"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421660",
+        "addr:housenumber": "728",
+        "addr:street": "Carmen Mena",
+        "amenity": "school",
+        "contact:email": "escuela_juanbautista@hotmail.com",
+        "name": "Escuela Básica Juan Bautista",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6473183,
+          -33.5076158
+        ]
+      },
+      "id": "node/906421660"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421662",
+        "addr:housenumber": "882",
+        "addr:street": "Carmen Mena",
+        "amenity": "school",
+        "contact:email": "cesl@terra.cl",
+        "contact:phone": "+56 2 5215484",
+        "name": "Centro Educacional San Luis",
+        "operator": "3",
+        "school:type": "310;410;510;610",
+        "source": "Reconocimiento cortográfico de campo 2016 por KG"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6508441,
+          -33.5072938
+        ]
+      },
+      "id": "node/906421662"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421664",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "5270",
+        "addr:street": "Dario Salas",
+        "amenity": "school",
+        "name": "Liceo Luis Galecio Corvera",
+        "operator": "1",
+        "school:type": "10;110;310",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6433232,
+          -33.504078
+        ]
+      },
+      "id": "node/906421664"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421667",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "736",
+        "addr:street": "Miguel León Prado",
+        "amenity": "school",
+        "contact:email": "staana@terra.cl",
+        "name": "Escuela Básica Particular N°23 Colegio Santa Ana",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6469083,
+          -33.5062858
+        ]
+      },
+      "id": "node/906421667"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421668",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "4756",
+        "addr:street": "San Francisco",
+        "amenity": "school",
+        "contact:email": "ahugo801@gmail.com",
+        "name": "Escuela Especial De Adultos Hugo Morales Bizama",
+        "operator": "1",
+        "school:type": "160",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6469388,
+          -33.4976898
+        ]
+      },
+      "id": "node/906421668"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421669",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "1317",
+        "addr:street": "San Nicolás",
+        "amenity": "school",
+        "contact:email": "col.aragon@gmail.com",
+        "name": "Escuela Particular Fernando De Aragón",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6585678,
+          -33.497246
+        ]
+      },
+      "id": "node/906421669"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421671",
+        "addr:city": "San Miguel",
+        "addr:country": "CL",
+        "addr:housenumber": "1548",
+        "addr:street": "San Nicolás",
+        "amenity": "school",
+        "contact:email": "japapo@educarchile.cl",
+        "contact:phone": "+56 2 3128057",
+        "name": "Escuela Básica Spring College N 2 2039",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería",
+        "operator": "3",
+        "school:type": "110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6631228,
+          -33.4965952
+        ]
+      },
+      "id": "node/906421671"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421672",
+        "addr:housenumber": "1230",
+        "addr:street": "Avenida La Marina",
+        "amenity": "school",
+        "contact:email": "clementeanexo@vtr.net",
+        "name": "Escuela Básica Y Especial San Clemente A",
+        "operator": "3",
+        "school:type": "214",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6560879,
+          -33.497086
+        ]
+      },
+      "id": "node/906421672"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421673",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "1290",
+        "addr:street": "Teresa Vial",
+        "amenity": "school",
+        "contact:email": "gmistral461@gmail.com",
+        "name": "Escuela Básica Gabriela Mistral",
+        "operator": "1",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6557239,
+          -33.4930588
+        ]
+      },
+      "id": "node/906421673"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421674",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "4260",
+        "addr:street": "San Ignacio",
+        "amenity": "school",
+        "contact:email": "alfredbinet@hotmail.com",
+        "name": "Escuela Básica Alfred Binet School",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6572124,
+          -33.4912012
+        ]
+      },
+      "id": "node/906421674"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421680",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "4688",
+        "addr:street": "Gran Avenida José Miguel Carrera",
+        "amenity": "school",
+        "contact:email": "licte100@ctcinternet.cl",
+        "name": "Liceo Técnico A-100 San Miguel",
+        "operator": "5",
+        "school:type": "610",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6526114,
+          -33.4967756
+        ]
+      },
+      "id": "node/906421680"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421681",
+        "addr:housenumber": "620",
+        "addr:street": "Ingeniero Budge",
+        "amenity": "school",
+        "contact:email": "info@colegioloscarrera.cl",
+        "contact:phone": "+56 2 5442973",
+        "name": "Escuela Básica Los Carrera",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6480383,
+          -33.495856
+        ]
+      },
+      "id": "node/906421681"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421683",
+        "addr:city": "San Miguel",
+        "addr:country": "CL",
+        "addr:housenumber": "3653",
+        "addr:street": "Llano Subercaseaux",
+        "amenity": "school",
+        "contact:email": "veronikita_10@hotmail.com",
+        "name": "Colegio Pan American College",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería",
+        "operator": "3",
+        "school:type": "10;110;310",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6514467,
+          -33.4876724
+        ]
+      },
+      "id": "node/906421683"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421686",
+        "addr:housenumber": "838",
+        "addr:street": "Curiñanca",
+        "amenity": "school",
+        "contact:email": "cole_838@chile.com",
+        "name": "Escuela Básica Álvarez de Toledo",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6455849,
+          -33.4900008
+        ]
+      },
+      "id": "node/906421686"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421687",
+        "addr:housenumber": "1158",
+        "addr:street": "Arcángel",
+        "amenity": "school",
+        "contact:email": "scleme@ctcinternet.cl",
+        "name": "Escuela Básica Y Especial San Clemente",
+        "operator": "3",
+        "school:type": "110;214",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6521181,
+          -33.4881262
+        ]
+      },
+      "id": "node/906421687"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421688",
+        "addr:city": "San Miguel",
+        "addr:country": "CL",
+        "addr:housenumber": "1020",
+        "addr:street": "Brigadier de la Cruz",
+        "amenity": "school",
+        "contact:email": "Escuela2009@yahoo.es",
+        "name": "Escuela Especial Tecnológica",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería",
+        "operator": "3",
+        "school:type": "212",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6498194,
+          -33.4914422
+        ]
+      },
+      "id": "node/906421688"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421718",
+        "addr:housenumber": "681",
+        "addr:street": "San Nicolás",
+        "amenity": "school",
+        "contact:email": "escuelalucilagodoy@terra.cl",
+        "name": "Escuela Básica Lucila Godoy",
+        "operator": "3",
+        "school:type": "110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6421381,
+          -33.5016659
+        ]
+      },
+      "id": "node/906421718"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906424831",
+        "addr:housenumber": "1549",
+        "addr:street": "Enrique Matte",
+        "amenity": "school",
+        "contact:email": "corpameg@yahoo.com",
+        "name": "Escuela Básica Corpameg",
+        "operator": "3",
+        "school:type": "110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6564341,
+          -33.4838673
+        ]
+      },
+      "id": "node/906424831"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906424878",
+        "addr:housenumber": "3370",
+        "addr:street": "Ramón Barros Luco",
+        "amenity": "school",
+        "contact:email": "daniela@fnh.cl",
+        "contact:phone": "+56 2 4805968",
+        "name": "Escuela Básica Hospitalaria Fundación Nuestros Hijos",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6567578,
+          -33.4836372
+        ]
+      },
+      "id": "node/906424878"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906425162",
+        "addr:housenumber": "2983",
+        "addr:street": "Barros Luco",
+        "amenity": "school",
+        "contact:email": "barrosluco1510@yahoo.com",
+        "name": "Escuela Básica y Especial Barros Luco",
+        "operator": "3",
+        "school:type": "110;214",
+        "source": "Gobierno Regiónal Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6552716,
+          -33.4803675
+        ]
+      },
+      "id": "node/906425162"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906425257",
+        "addr:city": "San Miguel",
+        "addr:country": "CL",
+        "addr:housenumber": "1298",
+        "addr:street": "Ramón Subercaseaux",
+        "amenity": "school",
+        "contact:email": "pipan1626@hotmail.com",
+        "contact:phone": "+56 2 5557322",
+        "name": "Colegio Pipan",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería",
+        "operator": "3",
+        "school:type": "214",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6525481,
+          -33.4842963
+        ]
+      },
+      "id": "node/906425257"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906425351",
+        "addr:housenumber": "3369",
+        "addr:street": "Ricardo Morales",
+        "amenity": "school",
+        "name": "Escuela Especial Los Cedros Del Libano",
+        "operator": "1",
+        "school:type": "212;214;215",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6527681,
+          -33.4846463
+        ]
+      },
+      "id": "node/906425351"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4803540522",
+        "addr:housenumber": "1198",
+        "addr:postcode": "8920099",
+        "addr:street": "San Nicolás",
+        "amenity": "school",
+        "email": "contacto@BabySchool.cl",
+        "name": "Jardín Infantil Baby School",
+        "name:en": "Pre Kínder Garden Baby School",
+        "opening_hours": "Mo-Fr 07:30-19:00",
+        "phone": "+56229800814",
+        "website": "http://www.babyschool.cl"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6560678,
+          -33.4988021
+        ]
+      },
+      "id": "node/4803540522"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10971878526",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "3370",
+        "addr:street": "Ricardo Morales",
+        "amenity": "school",
+        "name": "Escuela Especial Los Cedros Del Libano"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6527188,
+          -33.4853392
+        ]
+      },
+      "id": "node/10971878526"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10973796501",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "1171",
+        "addr:street": "San Nicolás",
+        "amenity": "school",
+        "name": "Liceo Saint Patrick's School"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6551435,
+          -33.4988195
+        ]
+      },
+      "id": "node/10973796501"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10973831842",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "4010",
+        "addr:street": "Florencia",
+        "amenity": "school",
+        "name": "Inst. Regional de Educación Adultos San Miguel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6564418,
+          -33.4893366
+        ]
+      },
+      "id": "node/10973831842"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10973853060",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "521",
+        "addr:street": "Sebastopol",
+        "amenity": "school",
+        "name": "Liceo Comercial Javiera y José Luis Carrera N1",
+        "website": "https://www.jjlcarrera.cl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6380808,
+          -33.516588
+        ]
+      },
+      "id": "node/10973853060"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10973867225",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "1057",
+        "addr:street": "Avenida Alcalde Carlos Valdovinos",
+        "amenity": "school",
+        "name": "Escuela Educacional Instituto De Madrid"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6475322,
+          -33.4798872
+        ]
+      },
+      "id": "node/10973867225"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10973964886",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "666",
+        "addr:street": "Sebastopol",
+        "amenity": "school",
+        "name": "Escuela Particular La Raíz Y La Espiga"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6452398,
+          -33.5157219
+        ]
+      },
+      "id": "node/10973964886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10974076706",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "728",
+        "addr:street": "Carmen Mena",
+        "amenity": "school",
+        "name": "Colegio King´s School"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6473951,
+          -33.5080661
+        ]
+      },
+      "id": "node/10974076706"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10977744609",
+        "addr:city": "San Miguel",
+        "addr:country": "CL",
+        "addr:housenumber": "4040",
+        "addr:street": "Gaspar Banda",
+        "amenity": "school",
+        "name": "Escuela Especial Huepil",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6557972,
+          -33.4903807
+        ]
+      },
+      "id": "node/10977744609"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10979151985",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "1058",
+        "addr:street": "Llico",
+        "amenity": "school",
+        "name": "Escuela Especial de Lenguaje Con Agua del Cielo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6535133,
+          -33.5024856
+        ]
+      },
+      "id": "node/10979151985"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10981328822",
+        "addr:city": "San Miguel",
+        "addr:country": "CL",
+        "addr:housenumber": "1054",
+        "addr:street": "Tannembaum",
+        "amenity": "school",
+        "name": "Escuela de Párvulos RAYITO de SOL",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.65597,
+          -33.5113491
+        ]
+      },
+      "id": "node/10981328822"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10989836243",
+        "addr:city": "San Miguel",
+        "addr:country": "CL",
+        "addr:housenumber": "918",
+        "addr:street": "Brigadier de la Cruz",
+        "amenity": "school",
+        "name": "Escuela Especial Bambini Insieme",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6486795,
+          -33.4920668
+        ]
+      },
+      "id": "node/10989836243"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10990025635",
+        "addr:city": "San Miguel",
+        "addr:country": "CL",
+        "addr:housenumber": "4926",
+        "addr:street": "Monja Alférez",
+        "amenity": "school",
+        "name": "Jardín infantil El Rincón de Los Sueños",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6616865,
+          -33.496066
+        ]
+      },
+      "id": "node/10990025635"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11246938362",
+        "addr:country": "CL",
+        "amenity": "school",
+        "name": "Colegio Paulo Freire",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6559539,
+          -33.497612
+        ]
+      },
+      "id": "node/11246938362"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11248821404",
+        "addr:country": "CL",
+        "amenity": "school",
+        "name": "Escuela Ecológica Mapu Lihuen",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6664593,
+          -33.5067427
+        ]
+      },
+      "id": "node/11248821404"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11367059258",
+        "addr:country": "CL",
+        "amenity": "school",
+        "name": "Centro de Educacion Diferencial Armonia",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6584178,
+          -33.512099
+        ]
+      },
+      "id": "node/11367059258"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11379813220",
+        "addr:city": "San Miguel",
+        "addr:country": "CL",
+        "addr:housenumber": "1174",
+        "addr:street": "San Nicolás",
+        "amenity": "school",
+        "name": "Escuela de Párvulos Gentecita",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6554958,
+          -33.4990832
+        ]
+      },
+      "id": "node/11379813220"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11381954673",
+        "addr:city": "San Miguel",
+        "addr:country": "CL",
+        "addr:street": "Avenida La Marina",
+        "amenity": "school",
+        "name": "Colegio Ashell English College San Miguel",
+        "nohousenumber": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6544091,
+          -33.4980041
+        ]
+      },
+      "id": "node/11381954673"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11382102855",
+        "addr:city": "San Miguel",
+        "addr:country": "CL",
+        "addr:housenumber": "1071",
+        "addr:street": "Carmen Mena",
+        "amenity": "school",
+        "name": "Colegio Los Ángeles Santiago",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6547486,
+          -33.5062636
+        ]
+      },
+      "id": "node/11382102855"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11415686437",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "4160",
+        "addr:street": "Gran Avenida José Miguel Carrera",
+        "amenity": "school",
+        "name": "Colegio Claretiano"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6514433,
+          -33.4918634
+        ]
+      },
+      "id": "node/11415686437"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11429610670",
+        "addr:city": "San Miguel",
+        "addr:housenumber": "1389",
+        "addr:street": "Décima Avenida",
+        "amenity": "school",
+        "name": "Escuela del Cariño IX San Miguel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6640846,
+          -33.5115846
+        ]
+      },
+      "id": "node/11429610670"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11959135849",
+        "amenity": "school",
+        "name": "Escuela Industrial Particular Lautaro",
+        "website": "https://escuela-lautaro.cl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.655319,
+          -33.4991144
+        ]
+      },
+      "id": "node/11959135849"
+    }
+  ]
+}
