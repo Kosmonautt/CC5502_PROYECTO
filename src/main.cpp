@@ -415,9 +415,15 @@ Point_2 transformPointToRange(Point_2 point, float minX, float minY, float maxX,
 
 // funtion that reads the input points from a geojson file and returns a vector of floats that represent the vertices of the points
 std::vector<float> readInputPointsFrom() {
-    // the use can pick the file to read the input points from
+    // vector for the points vertices
+    std::vector<float> pointVertices;
+    // vector for the cgal points from the geojson file
+    std::vector<Point_2> pointsCGALRaw;
+
+    // the user can pick the file to read the input points from
+    // for the boundary
     std::string filename;
-    std::cout << "Enter the geojson file route: ";
+    std::cout << "Enter the geojson file route for the boundary: ";
     std::cin >> filename;
 
     // using nlohmann json library to read the input points from a json file
@@ -431,11 +437,6 @@ std::vector<float> readInputPointsFrom() {
     // the file is closed
     file.close();
 
-    // vector for the points vertices
-    std::vector<float> pointVertices;
-    // vector for the cgal points from the geojson file
-    std::vector<Point_2> pointsCGALRaw;
-
     // for all coordinates in the file
     for (size_t i = 0; i < j["features"][0]["geometry"]["coordinates"][0].size(); i++) {
         // the x and y coordinates are extracted
@@ -443,6 +444,34 @@ std::vector<float> readInputPointsFrom() {
         float y = j["features"][0]["geometry"]["coordinates"][0][i][1];
         // the position is added to the cgal points vector
         pointsCGALRaw.push_back(Point_2(x, y));
+    }
+
+    // for the points inside the boundary
+    std::cout << "Enter the geojson file route for the points inside the boundary: ";
+    std::cin >> filename;
+
+    // the file is opened
+    file.open(filename);
+    // the file is parsed
+    file >> j;
+    // the file is closed
+    file.close();
+
+    // for all features in the file
+    for (size_t i = 0; i < j["features"].size(); i++) {
+        // if ["geometry"]["type"] is "Polygon", only the first coordinates is considered
+        if (j["features"][i]["geometry"]["type"] == "Polygon") {
+            // for all coordinates in the file
+            float x = j["features"][i]["geometry"]["coordinates"][0][0][0];
+            float y = j["features"][i]["geometry"]["coordinates"][0][0][1];
+        }
+        // if ["geometry"]["type"] is "Point", the coordinates are extracted
+        else if (j["features"][i]["geometry"]["type"] == "Point") {
+            float x = j["features"][i]["geometry"]["coordinates"][0];
+            float y = j["features"][i]["geometry"]["coordinates"][1];
+            // the position is added to the cgal points vector
+            pointsCGALRaw.push_back(Point_2(x, y));
+        }
     }
 
     // the minimum and maximum x and y coordinates are calculated
