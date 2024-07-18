@@ -3,6 +3,7 @@
 #include <ctime>
 #include <iostream>
 #include "glad.h"
+#include <nlohmann/json.hpp>
 #include <GLFW/glfw3.h>
 #include <CGAL/Exact_predicates_exact_constructions_kernel.h>
 #include <CGAL/Delaunay_triangulation_2.h>

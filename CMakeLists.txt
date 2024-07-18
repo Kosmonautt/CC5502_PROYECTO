@@ -24,3 +24,6 @@ target_link_libraries(LargestEmptyCircle
     OpenGL::GL
     CGAL::CGAL
 )
+
+# Include the header files
+target_include_directories(${PROJECT_NAME} PUBLIC include)
