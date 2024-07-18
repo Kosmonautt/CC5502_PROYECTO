@@ -1,0 +1,5 @@
+[out:json][timeout:25];
+// Assuming there's a unique attribute or combination to narrow down to one city
+area[name="San Ramón"][admin_level=8]["dpachile:id"="13131"]->.cityArea;
+rel(area.cityArea)["boundary"="administrative"]["admin_level"="8"];
+out geom;

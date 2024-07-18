@@ -393,8 +393,23 @@ std::tuple<std::vector<float>, std::vector<float>, std::vector<float>> getLarges
 
 // function to transform a Point_2 in an specified range to a Point_2 in the range [-1, 1] and with a padding that is specified by the user
 Point_2 transformPointToRange(Point_2 point, float minX, float minY, float maxX, float maxY) {
-    float x = (2.0f * (CGAL::to_double(point.x()) - minX) / (maxX - minX)) - 1.0f;
-    float y = (2.0f * (CGAL::to_double(point.y()) - minY) / (maxY - minY)) - 1.0f;
+    // dimensions of the bounding box are calculated
+    float width = maxX - minX;
+    float height = maxY - minY;
+
+    // the scale factor to fit the shape within [-1, 1] range is calculated, preserving aspect ratio
+    float scaleX = 2.0f / width;
+    float scaleY = 2.0f / height;
+    float scale = std::min(scaleX, scaleY); // Use the smaller scale to ensure fit
+
+    // the new coordinates are calculated
+    float x = scale * (CGAL::to_double(point.x()) - minX) - (scale * width) / 2.0f;
+    float y = scale * (CGAL::to_double(point.y()) - minY) - (scale * height) / 2.0f;
+
+    // the coordinates are centered
+    x = (x + 1.0f) / 2.0f * 2.0f - 1.0f; // horizontally
+    y = (y + 1.0f) / 2.0f * 2.0f - 1.0f; // vertically
+
     return Point_2(x, y);
 }
 
@@ -415,9 +430,6 @@ std::vector<float> readInputPointsFrom() {
     file >> j;
     // the file is closed
     file.close();
-
-    // the file is printed
-    std::cout << j.dump(4) << std::endl;
 
     // vector for the points vertices
     std::vector<float> pointVertices;

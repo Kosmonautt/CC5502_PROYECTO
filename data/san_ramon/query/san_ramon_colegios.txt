@@ -1,0 +1,7 @@
+[out:json][timeout:25];
+// Find the area ID for San Ramón
+area[name="San Ramón"][admin_level=8]["dpachile:id"="13131"]->.cityArea;
+// gather results for schools within this area
+nwr(area.cityArea)["amenity"="school"];
+// print results for schools
+out geom;

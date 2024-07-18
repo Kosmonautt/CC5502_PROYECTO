@@ -1,0 +1,1720 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2024-07-18T03:00:44Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/233129697",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "10252",
+        "addr:street": "Galvarino",
+        "amenity": "school",
+        "contact:email": "villalacultura@yahoo.es",
+        "contact:phone": "+56 2 5418837",
+        "name": "Escuela Básica Villa La Cultura",
+        "operator": "2",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6324175,
+              -33.5562064
+            ],
+            [
+              -70.6322834,
+              -33.5562154
+            ],
+            [
+              -70.6319375,
+              -33.556164
+            ],
+            [
+              -70.6321511,
+              -33.5551978
+            ],
+            [
+              -70.6322864,
+              -33.5545859
+            ],
+            [
+              -70.6328625,
+              -33.5545545
+            ],
+            [
+              -70.6330956,
+              -33.5557449
+            ],
+            [
+              -70.6323424,
+              -33.5558488
+            ],
+            [
+              -70.6324175,
+              -33.5562064
+            ]
+          ]
+        ]
+      },
+      "id": "way/233129697"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/449422392",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "1887",
+        "addr:street": "Doñihue",
+        "amenity": "school",
+        "name": "Escuela Básica Educadores de Chile",
+        "source": "Reconocimiento cortográfico de campo 2016 por KG"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6403779,
+              -33.5374917
+            ],
+            [
+              -70.6405612,
+              -33.5382136
+            ],
+            [
+              -70.6399353,
+              -33.538324
+            ],
+            [
+              -70.639752,
+              -33.5376021
+            ],
+            [
+              -70.6403779,
+              -33.5374917
+            ]
+          ]
+        ]
+      },
+      "id": "way/449422392"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/449429384",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "8450",
+        "addr:street": "Pedro Aguirre Cerda",
+        "amenity": "school",
+        "contact:email": "cepsanramon2002@yahoo.es",
+        "contact:phone": "+56 2 5255543",
+        "name": "Centro Educacional Purkuyen",
+        "operator": "2",
+        "school:type": "10;110;310;410",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6374525,
+              -33.5377309
+            ],
+            [
+              -70.6372892,
+              -33.5377529
+            ],
+            [
+              -70.6368342,
+              -33.5377267
+            ],
+            [
+              -70.63684,
+              -33.5375988
+            ],
+            [
+              -70.6368521,
+              -33.5373298
+            ],
+            [
+              -70.6368682,
+              -33.5369742
+            ],
+            [
+              -70.6368704,
+              -33.5369264
+            ],
+            [
+              -70.6368067,
+              -33.5369249
+            ],
+            [
+              -70.636804,
+              -33.5367728
+            ],
+            [
+              -70.6368389,
+              -33.5367729
+            ],
+            [
+              -70.6371822,
+              -33.5367739
+            ],
+            [
+              -70.6371809,
+              -33.5367935
+            ],
+            [
+              -70.63726,
+              -33.5368868
+            ],
+            [
+              -70.6374525,
+              -33.5377309
+            ]
+          ]
+        ]
+      },
+      "id": "way/449429384"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/451468402",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "7551",
+        "addr:street": "Carlos Dávila",
+        "amenity": "school",
+        "contact:email": "esdelsab@hotmail.com",
+        "name": "Escuela Básica Sendero del Saber",
+        "operator": "2",
+        "school:type": "10;110",
+        "source": "Reconocimiento cortográfico de campo 2016 por KG"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6385577,
+              -33.5263654
+            ],
+            [
+              -70.6389627,
+              -33.526299
+            ],
+            [
+              -70.6390643,
+              -33.5267291
+            ],
+            [
+              -70.6386592,
+              -33.5267956
+            ],
+            [
+              -70.6385577,
+              -33.5263654
+            ]
+          ]
+        ]
+      },
+      "id": "way/451468402"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/451913544",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "7910",
+        "addr:street": "Juan Luis Sanfuentes",
+        "amenity": "school",
+        "contact:email": "liceoemadiaz@yahoo.es",
+        "name": "Escuela Particular Ema Diaz Sierra",
+        "operator": "3",
+        "school:type": "310;410;610",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6421282,
+              -33.5296335
+            ],
+            [
+              -70.6422149,
+              -33.5300032
+            ],
+            [
+              -70.6419673,
+              -33.5300435
+            ],
+            [
+              -70.6418806,
+              -33.5296738
+            ],
+            [
+              -70.6421282,
+              -33.5296335
+            ]
+          ]
+        ]
+      },
+      "id": "way/451913544"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/451919952",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "8153",
+        "addr:street": "Profesor David Catilao Riveros",
+        "amenity": "school",
+        "contact:email": "esc511@ctcinternet.cl",
+        "name": "Liceo Municipal Araucanía",
+        "operator": "2",
+        "school:type": "10;110;160;360;361",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6372713,
+              -33.5341868
+            ],
+            [
+              -70.6374573,
+              -33.5341677
+            ],
+            [
+              -70.637772,
+              -33.5353296
+            ],
+            [
+              -70.6372874,
+              -33.535343
+            ],
+            [
+              -70.6372713,
+              -33.5341868
+            ]
+          ]
+        ]
+      },
+      "id": "way/451919952"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/454971929",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "9567",
+        "addr:street": "Aníbal Zañartu",
+        "amenity": "school",
+        "contact:email": "amattelarrain@hotmail.com",
+        "name": "Escuela Particular Arturo Matte Larraín",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6498129,
+              -33.548704
+            ],
+            [
+              -70.6490566,
+              -33.5488112
+            ],
+            [
+              -70.6488631,
+              -33.5478625
+            ],
+            [
+              -70.6496193,
+              -33.5477554
+            ],
+            [
+              -70.6498129,
+              -33.548704
+            ]
+          ]
+        ]
+      },
+      "id": "way/454971929"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/618693753",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "1922",
+        "addr:street": "Riquelme",
+        "amenity": "school",
+        "contact:email": "escunani@ctcinternet.cl",
+        "contact:phone": "+56 2 5417103",
+        "name": "Escuela Nanihue",
+        "operator": "2",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6407126,
+              -33.5492911
+            ],
+            [
+              -70.6408711,
+              -33.5500438
+            ],
+            [
+              -70.6401202,
+              -33.5501536
+            ],
+            [
+              -70.6399617,
+              -33.5494009
+            ],
+            [
+              -70.6407126,
+              -33.5492911
+            ]
+          ]
+        ]
+      },
+      "id": "way/618693753"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/618693770",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "9921",
+        "addr:street": "Almirante Latorre",
+        "amenity": "school",
+        "contact:email": "cepjasanramon@yahoo.es",
+        "name": "Centro Educacional Paula Jaraquemada",
+        "operator": "3",
+        "school:type": "10;110;160;360",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6452333,
+              -33.551331
+            ],
+            [
+              -70.6454095,
+              -33.552228
+            ],
+            [
+              -70.6448785,
+              -33.5522954
+            ],
+            [
+              -70.6446861,
+              -33.5514133
+            ],
+            [
+              -70.6452333,
+              -33.551331
+            ]
+          ]
+        ]
+      },
+      "id": "way/618693770"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/618706502",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "2030",
+        "addr:street": "Doñihue",
+        "amenity": "school",
+        "contact:email": "vatevicente@yahoo.es",
+        "contact:phone": "+56 2 5255615",
+        "name": "Liceo Comercial Vate Vicente Huidobro",
+        "operator": "5",
+        "school:type": "410",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6368342,
+              -33.5377267
+            ],
+            [
+              -70.6365383,
+              -33.5377058
+            ],
+            [
+              -70.6364587,
+              -33.5376021
+            ],
+            [
+              -70.6363099,
+              -33.5375939
+            ],
+            [
+              -70.6362014,
+              -33.537588
+            ],
+            [
+              -70.6360919,
+              -33.537582
+            ],
+            [
+              -70.6360565,
+              -33.5375383
+            ],
+            [
+              -70.6360897,
+              -33.5369249
+            ],
+            [
+              -70.6361266,
+              -33.5369084
+            ],
+            [
+              -70.6362365,
+              -33.5369111
+            ],
+            [
+              -70.6368067,
+              -33.5369249
+            ],
+            [
+              -70.6368704,
+              -33.5369264
+            ],
+            [
+              -70.6368682,
+              -33.5369742
+            ],
+            [
+              -70.6368652,
+              -33.5370399
+            ],
+            [
+              -70.6368342,
+              -33.5377267
+            ]
+          ]
+        ]
+      },
+      "id": "way/618706502"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/620756791",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "1574",
+        "addr:street": "Bolivia",
+        "amenity": "school",
+        "name": "Escuela Particular Parroquial Domingo Savio"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.646322,
+              -33.5384798
+            ],
+            [
+              -70.6460277,
+              -33.5374259
+            ],
+            [
+              -70.6467124,
+              -33.537293
+            ],
+            [
+              -70.6470068,
+              -33.5383469
+            ],
+            [
+              -70.646322,
+              -33.5384798
+            ]
+          ]
+        ]
+      },
+      "id": "way/620756791"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/733132088",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "10104",
+        "addr:street": "Aurora de Chile",
+        "amenity": "school",
+        "name": "Escuela Básica Tupahue"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6416477,
+              -33.5543346
+            ],
+            [
+              -70.6409636,
+              -33.5544346
+            ],
+            [
+              -70.6407757,
+              -33.5535415
+            ],
+            [
+              -70.6414596,
+              -33.5534415
+            ],
+            [
+              -70.6416477,
+              -33.5543346
+            ]
+          ]
+        ]
+      },
+      "id": "way/733132088"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1129346343",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "9299",
+        "addr:street": "Almirante Latorre",
+        "amenity": "school",
+        "contact:email": "esckarel2@yahoo.es",
+        "name": "Escuela Básica Karelmapu",
+        "operator": "2",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6445931,
+              -33.5458807
+            ],
+            [
+              -70.6436824,
+              -33.546013
+            ],
+            [
+              -70.6434664,
+              -33.5449369
+            ],
+            [
+              -70.6443758,
+              -33.5448008
+            ],
+            [
+              -70.6444229,
+              -33.5450348
+            ],
+            [
+              -70.6444817,
+              -33.5453272
+            ],
+            [
+              -70.6445931,
+              -33.5458807
+            ]
+          ]
+        ]
+      },
+      "id": "way/1129346343"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1129346345",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "9093",
+        "addr:street": "Avenida Santa Rosa",
+        "amenity": "school",
+        "contact:email": "sfrancis@ctcinternet.cl",
+        "name": "Liceo San Francisco",
+        "operator": "3",
+        "school:type": "10;110;310",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6349308,
+              -33.5436699
+            ],
+            [
+              -70.6349588,
+              -33.5446001
+            ],
+            [
+              -70.6343284,
+              -33.544678
+            ],
+            [
+              -70.634291,
+              -33.5450088
+            ],
+            [
+              -70.6340435,
+              -33.545001
+            ],
+            [
+              -70.6339707,
+              -33.5449754
+            ],
+            [
+              -70.6342851,
+              -33.5436113
+            ],
+            [
+              -70.6343517,
+              -33.5436232
+            ],
+            [
+              -70.6343611,
+              -33.5436738
+            ],
+            [
+              -70.6349308,
+              -33.5436699
+            ]
+          ]
+        ]
+      },
+      "id": "way/1129346345"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1178197115",
+        "addr:country": "CL",
+        "addr:street": "Avenida Lo Ovalle",
+        "amenity": "school",
+        "name": "Escuela Básica Particular Deutschland",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería",
+        "source": "Reconocimiento cortográfico de campo 2016 por KG"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6438071,
+              -33.5176171
+            ],
+            [
+              -70.6439444,
+              -33.5181261
+            ],
+            [
+              -70.6437404,
+              -33.5181643
+            ],
+            [
+              -70.643603,
+              -33.5176554
+            ],
+            [
+              -70.6438071,
+              -33.5176171
+            ]
+          ]
+        ]
+      },
+      "id": "way/1178197115"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1178665633",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "9701",
+        "addr:street": "Almirante Latorre",
+        "amenity": "school",
+        "contact:email": "cemsanramon@gmail.com",
+        "name": "Centro Educacional Municipal San Ramón",
+        "operator": "2",
+        "school:type": "110;510;610",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6450549,
+              -33.5490652
+            ],
+            [
+              -70.6451254,
+              -33.5494161
+            ],
+            [
+              -70.6452586,
+              -33.550079
+            ],
+            [
+              -70.6453188,
+              -33.5503787
+            ],
+            [
+              -70.6445295,
+              -33.5504955
+            ],
+            [
+              -70.6442493,
+              -33.54918
+            ],
+            [
+              -70.6450549,
+              -33.5490652
+            ]
+          ]
+        ]
+      },
+      "id": "way/1178665633"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1178665634",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "9835",
+        "addr:street": "Almirante Latorre",
+        "amenity": "school",
+        "contact:email": "directoraaliven@gmail.com",
+        "name": "Escuela Básica Aliven",
+        "operator": "2",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6453188,
+              -33.5503787
+            ],
+            [
+              -70.6454518,
+              -33.5510423
+            ],
+            [
+              -70.644665,
+              -33.5511532
+            ],
+            [
+              -70.6445295,
+              -33.5504955
+            ],
+            [
+              -70.6453188,
+              -33.5503787
+            ]
+          ]
+        ]
+      },
+      "id": "way/1178665634"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1213969254",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "1901",
+        "addr:street": "Santa Ana",
+        "amenity": "school",
+        "name": "Colegio Polivalente Francisco Ramirez"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6367443,
+              -33.5254757
+            ],
+            [
+              -70.6373683,
+              -33.525391
+            ],
+            [
+              -70.6374395,
+              -33.5258062
+            ],
+            [
+              -70.6368825,
+              -33.5258892
+            ],
+            [
+              -70.636911,
+              -33.5261502
+            ],
+            [
+              -70.6367484,
+              -33.5261773
+            ],
+            [
+              -70.6367545,
+              -33.5258689
+            ],
+            [
+              -70.6367443,
+              -33.5254757
+            ]
+          ]
+        ]
+      },
+      "id": "way/1213969254"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1229196040",
+        "amenity": "school",
+        "name": "Colegio Arturo Matte Larraín"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6506342,
+              -33.5527075
+            ],
+            [
+              -70.6507674,
+              -33.5533346
+            ],
+            [
+              -70.6500229,
+              -33.5534445
+            ],
+            [
+              -70.6498897,
+              -33.5528173
+            ],
+            [
+              -70.6506342,
+              -33.5527075
+            ]
+          ]
+        ]
+      },
+      "id": "way/1229196040"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906418723",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "10104",
+        "addr:street": "Aurora de Chile",
+        "amenity": "school",
+        "contact:email": "escuelatupahue@yahoo.es",
+        "contact:phone": "+56 2 5416696",
+        "name": "Escuela Básica Tupahue",
+        "operator": "2",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6414276,
+          -33.5536794
+        ]
+      },
+      "id": "node/906418723"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906418739",
+        "addr:housenumber": "9672;9687",
+        "addr:street": "Nueva Oriente",
+        "amenity": "school",
+        "contact:email": "vicho33@vtr.net",
+        "contact:phone": "+56 2 5479270",
+        "name": "Escuela Especial Dalcahue Sur 2",
+        "operator": "3",
+        "school:type": "214",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6539179,
+          -33.5503648
+        ]
+      },
+      "id": "node/906418739"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906418752",
+        "addr:housenumber": "2020",
+        "addr:street": "Quintin Romero",
+        "amenity": "school",
+        "contact:email": "eden@terra.cl",
+        "name": "Escuela Especial Edén de San Ramón",
+        "operator": "3",
+        "school:type": "214",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6511481,
+          -33.5451749
+        ]
+      },
+      "id": "node/906418752"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906418770",
+        "addr:city": "San Ramón",
+        "addr:country": "CL",
+        "addr:housenumber": "8552",
+        "addr:street": "La Granja",
+        "amenity": "school",
+        "contact:email": "maricami_96@hotmail.com",
+        "name": "Escuela Especial Diego Thompson",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería",
+        "operator": "3",
+        "school:type": "212;214",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6500466,
+          -33.5368231
+        ]
+      },
+      "id": "node/906418770"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906418779",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "1574",
+        "addr:street": "Bolivia",
+        "amenity": "school",
+        "contact:email": "dgosavio@gmail.com",
+        "name": "Escuela Particular Parroquial Domingo Savio",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.646668,
+          -33.5384126
+        ]
+      },
+      "id": "node/906418779"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906418804",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "1670",
+        "addr:street": "Avenida Américo Vespucio",
+        "amenity": "school",
+        "contact:email": "escespecial185@gmail.com",
+        "name": "Escuela Especial Particular Galvarino",
+        "operator": "3",
+        "school:type": "212",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6461561,
+          -33.5404491
+        ]
+      },
+      "id": "node/906418804"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906418853",
+        "addr:housenumber": "1425",
+        "addr:street": "Calle Brasil",
+        "amenity": "school",
+        "contact:email": "escuelavillanueva@terra.cl",
+        "contact:phone": "+56 2 5489577",
+        "name": "Escuela Básica Villa Nueva",
+        "operator": "3",
+        "school:type": "110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6472783,
+          -33.5348351
+        ]
+      },
+      "id": "node/906418853"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906418912",
+        "addr:housenumber": "9449",
+        "addr:street": "Avenida Santa Rosa",
+        "amenity": "school",
+        "contact:email": "ceiasanramon@gmail.com",
+        "name": "Centro Educacion Integral Adultos",
+        "operator": "2",
+        "school:type": "161;361",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.633229,
+          -33.5485448
+        ]
+      },
+      "id": "node/906418912"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906418984",
+        "addr:housenumber": "1887",
+        "addr:street": "Donihue",
+        "amenity": "school",
+        "contact:email": "edchile@ctcinternet.cl",
+        "name": "Escuela Basica Educadores De Chile",
+        "operator": "2",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6407386,
+          -33.5370051
+        ]
+      },
+      "id": "node/906418984"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906419102",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "2086",
+        "addr:street": "America Del Norte",
+        "amenity": "school",
+        "contact:email": "colfcomiranda@hotmail.com",
+        "name": "Escuela Básica Francisco De Miranda",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6357697,
+          -33.5311501
+        ]
+      },
+      "id": "node/906419102"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906419111",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "2001",
+        "addr:street": "America Del Norte",
+        "amenity": "school",
+        "contact:email": "espnm2001@yahoo.com",
+        "name": "Escuela Particular Especial Nuestro Mundo",
+        "operator": "3",
+        "school:type": "212;214",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.636568,
+          -33.5310303
+        ]
+      },
+      "id": "node/906419111"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906419119",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "2062",
+        "addr:street": "América del Sur",
+        "amenity": "school",
+        "contact:email": "escuelaelsaramirez@yahoo.es",
+        "contact:phone": "+56 2 5268412",
+        "name": "Escuela Particular Elsa Ramirez",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6361731,
+          -33.53185
+        ]
+      },
+      "id": "node/906419119"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906419135",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "2041",
+        "addr:street": "América del Sur",
+        "amenity": "school",
+        "contact:email": "escuelafranciscoramirez@yahoo.",
+        "name": "Escuela Básica Francisco Ramírez",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6363119,
+          -33.5321297
+        ]
+      },
+      "id": "node/906419135"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906419153",
+        "addr:housenumber": "2095",
+        "addr:street": "Venezuela",
+        "amenity": "school",
+        "contact:email": "patrival1@msn.com",
+        "contact:phone": "+56 2 5258627",
+        "name": "Escuela Básica Maurice And Nataly School",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6352189,
+          -33.5343851
+        ]
+      },
+      "id": "node/906419153"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421028",
+        "addr:housenumber": "7910",
+        "addr:street": "Juan Luis Sanfuente",
+        "amenity": "school",
+        "contact:email": "emadiaz@ctcinternet.cl",
+        "contact:phone": "+56 2 5115971",
+        "name": "Escuela Basica Ema Diaz Sierra",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6426385,
+          -33.5292452
+        ]
+      },
+      "id": "node/906421028"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421035",
+        "addr:housenumber": "1731",
+        "addr:street": "America Central",
+        "amenity": "school",
+        "contact:email": "info@cnmundo.com",
+        "contact:phone": "+56 2 5265607",
+        "name": "Escuela Basica Nuestro Mundo",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6423885,
+          -33.5301152
+        ]
+      },
+      "id": "node/906421035"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421058",
+        "addr:housenumber": "1357",
+        "addr:street": "Avenida El Parron",
+        "amenity": "school",
+        "contact:email": "armi1359@123mail.cl",
+        "name": "Escuela Basica Armi",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6466183,
+          -33.5285353
+        ]
+      },
+      "id": "node/906421058"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421091",
+        "addr:city": "San Ramón",
+        "addr:country": "CL",
+        "addr:housenumber": "1267",
+        "addr:street": "Parroquia",
+        "amenity": "school",
+        "contact:email": "arcadelosninos@gmail.com",
+        "contact:phone": "+56 2 5258050",
+        "name": "Escuela Especial El Arca de Los Niños",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería",
+        "operator": "3",
+        "school:type": "214",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.644724,
+          -33.5214019
+        ]
+      },
+      "id": "node/906421091"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421324",
+        "addr:housenumber": "2062",
+        "addr:street": "America Del Sur",
+        "amenity": "school",
+        "contact:email": "colegiofranciscoramirez@hotmai",
+        "name": "Instituto Com. Francisco Ramírez",
+        "operator": "3",
+        "school:type": "410",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6368588,
+          -33.5249553
+        ]
+      },
+      "id": "node/906421324"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421333",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "1674",
+        "addr:street": "Mirador",
+        "amenity": "school",
+        "name": "Escuela Colegio Alberto Blest Gana",
+        "operator": "3",
+        "school:type": "10;110;310",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.638063,
+          -33.5195055
+        ]
+      },
+      "id": "node/906421333"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421365",
+        "addr:housenumber": "6499",
+        "addr:street": "Avenida Santa Rosa",
+        "amenity": "school",
+        "contact:email": "escuela250@hotmail.com",
+        "name": "Escuela Basica Heidi English School",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6366587,
+          -33.5205601
+        ]
+      },
+      "id": "node/906421365"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421375",
+        "addr:housenumber": "1719",
+        "addr:street": "Avenida Mayo",
+        "amenity": "school",
+        "contact:email": "ebpumanque@gmail.com",
+        "name": "Escuela Basica Pumanque",
+        "operator": "3",
+        "school:type": "10;110",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6377474,
+          -33.5207963
+        ]
+      },
+      "id": "node/906421375"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421438",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "1470",
+        "addr:street": "Mirador",
+        "amenity": "school",
+        "contact:email": "centromirador@gmail.com",
+        "name": "Centro Educacional Mirador",
+        "operator": "2",
+        "school:type": "10;110;510;610",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6410086,
+          -33.5188355
+        ]
+      },
+      "id": "node/906421438"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/906421459",
+        "addr:housenumber": "1503",
+        "addr:street": "Mirador",
+        "amenity": "school",
+        "contact:email": "monica.yp@hotmail.com",
+        "contact:phone": "+56 2 5251497",
+        "name": "Escuela Especial Nuestra Señora De Monserrat",
+        "operator": "3",
+        "school:type": "214",
+        "source": "Gobierno Regional Metropolitano de Santiago (http://www.gobiernosantiago.cl/)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6409286,
+          -33.5190555
+        ]
+      },
+      "id": "node/906421459"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4751442423",
+        "amenity": "school",
+        "name": "Jardín Infantil Pasos de Pingüino",
+        "name:es": "Jardín Infantil Pasos de Pingüino"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6429581,
+          -33.5403066
+        ]
+      },
+      "id": "node/4751442423"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10974305029",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "9449",
+        "addr:street": "Avenida Santa Rosa",
+        "amenity": "school",
+        "name": "Escuela Especial de Adultos"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6333351,
+          -33.5490124
+        ]
+      },
+      "id": "node/10974305029"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10974311461",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "1741",
+        "addr:street": "Avenida El Parrón",
+        "amenity": "school",
+        "name": "Instituto Comercial Ema Díaz Sierra Diur"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6419732,
+          -33.5296257
+        ]
+      },
+      "id": "node/10974311461"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10974491094",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "6499",
+        "addr:street": "Avenida Santa Rosa",
+        "amenity": "school",
+        "name": "Escuela Básica Álas de Águila"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6367012,
+          -33.52066
+        ]
+      },
+      "id": "node/10974491094"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10977437850",
+        "addr:city": "La Cisterna",
+        "addr:housenumber": "1741",
+        "addr:street": "Avenida El Parrón",
+        "amenity": "school",
+        "name": "Liceo Técnico La Cisterna"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6418522,
+          -33.5298259
+        ]
+      },
+      "id": "node/10977437850"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10977616726",
+        "addr:city": "La Cisterna",
+        "addr:street": "Avenida Américo Vespucio",
+        "amenity": "school",
+        "name": "Escuela Básica Particular N°171 Galvarino"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.650574,
+          -33.539628
+        ]
+      },
+      "id": "node/10977616726"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10979374676",
+        "addr:city": "San Ramón",
+        "addr:country": "CL",
+        "addr:housenumber": "8153",
+        "addr:street": "Los Clarines",
+        "amenity": "school",
+        "name": "Escuela de Lenguaje CHILE",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6414965,
+          -33.5341546
+        ]
+      },
+      "id": "node/10979374676"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10980910226",
+        "addr:city": "San Ramón",
+        "addr:housenumber": "8094",
+        "addr:street": "Ramón Barros Luco",
+        "amenity": "school",
+        "name": "Escuela Especial Mis Primeros Pasitos"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6452489,
+          -33.5323858
+        ]
+      },
+      "id": "node/10980910226"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11246676992",
+        "addr:country": "CL",
+        "amenity": "school",
+        "name": "Escuela Especial Parapeques",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6445127,
+          -33.5363078
+        ]
+      },
+      "id": "node/11246676992"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11331123445",
+        "addr:country": "CL",
+        "amenity": "school",
+        "name": "Escuela Hospitalaria Padre Hurtado",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6344072,
+          -33.5526294
+        ]
+      },
+      "id": "node/11331123445"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11367092339",
+        "addr:city": "San Ramón",
+        "addr:country": "CL",
+        "addr:housenumber": "2020",
+        "addr:street": "Quintín Romero",
+        "amenity": "school",
+        "name": "Escuela Especial Eden de San Ramon",
+        "note": "Correcciones masivas a ortografía en nombres de importaciones hechas por equipo de gendarmería"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6372251,
+          -33.5473575
+        ]
+      },
+      "id": "node/11367092339"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11959383293",
+        "amenity": "school",
+        "name": "Escuela Básica Ema Díaz Sierra",
+        "website": "https://escuelaemadiaz.cl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.6426822,
+          -33.5297609
+        ]
+      },
+      "id": "node/11959383293"
+    }
+  ]
+}
