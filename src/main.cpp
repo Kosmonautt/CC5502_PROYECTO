@@ -529,15 +529,6 @@ int main(int, char**) {
     std::vector<float> pointVertices = readInputPointsFrom();
 
     // // vector for the points vertices
-    // std::vector<float> pointVertices = {
-    //     0.0f, 0.0f, 0.0f,   inputPointsColor[0], inputPointsColor[1], inputPointsColor[2],
-    //     0.5f, 0.5f, 0.0f,   inputPointsColor[0], inputPointsColor[1], inputPointsColor[2],
-    //     -0.5f, 0.5f, 0.0f,  inputPointsColor[0], inputPointsColor[1], inputPointsColor[2],
-    //     0.5f, -0.5f, 0.0f,  inputPointsColor[0], inputPointsColor[1], inputPointsColor[2],
-    //     -0.5f, -0.5f, 0.0f, inputPointsColor[0], inputPointsColor[1], inputPointsColor[2],
-    // };
-
-    // // vector for the points vertices
     // std::vector<float> pointVertices;
     // for (int i = 0; i < n; i++) {
     //     float x = -1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (2.0f)));
