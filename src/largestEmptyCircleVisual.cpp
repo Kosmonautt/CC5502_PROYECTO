@@ -31,8 +31,8 @@ float inputPointsColor[3] = {1.0f, 0.0f, 0.0f};
 float voronoiEdgesColor[3] = {0.0f, 1.0f, 0.0f};
 // the color of the convex hull (blue)
 float convexHullColor[3] = {0.0f, 0.0f, 1.0f};
-// the color of the candidate points (white)
-float candidatePointsColor[3] = {1.0f, 1.0f, 1.0f};
+// the color of the candidate points (yellow)
+float candidatePointsColor[3] = {1.0f, 1.0f, 0.0f};
 // the color of the largest empty circle (white)
 float largestEmptyCircleColor[3] = {1.0f, 1.0f, 1.0f};
 
