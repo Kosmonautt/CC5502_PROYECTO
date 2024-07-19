@@ -36,6 +36,13 @@ float candidatePointsColor[3] = {1.0f, 1.0f, 1.0f};
 // the color of the largest empty circle (orange)
 float largestEmptyCircleColor[3] = {1.0f, 0.5f, 0.0f};
 
+// show voronoi diagram
+bool showVoronoi = true;
+// show convex hull
+bool showConvexHull = true;
+// show candidate points
+bool showCandidatePoints = true;
+
 // vertex shader source
 const char* vertexShaderSource = R"glsl(
     #version 330 core
@@ -201,22 +208,26 @@ std::tuple<std::vector<float>, std::vector<float>, std::vector<float>> getLarges
         // the source and target points are added to the set
         voronoiVerticesCGAL.insert(source);
         voronoiVerticesCGAL.insert(target);
-        // the coordinates are converted to float and added to the vector
-        voronoiEdgesGLAD.push_back(CGAL::to_double(source.x()));
-        voronoiEdgesGLAD.push_back(CGAL::to_double(source.y()));
-        voronoiEdgesGLAD.push_back(0.0f);
-        // the color of the edges is set
-        voronoiEdgesGLAD.push_back(voronoiEdgesColor[0]);
-        voronoiEdgesGLAD.push_back(voronoiEdgesColor[1]);
-        voronoiEdgesGLAD.push_back(voronoiEdgesColor[2]);
-        // the coordinates are converted to float and added to the vector
-        voronoiEdgesGLAD.push_back(CGAL::to_double(target.x()));
-        voronoiEdgesGLAD.push_back(CGAL::to_double(target.y()));
-        voronoiEdgesGLAD.push_back(0.0f);
-        // the color of the edges is set
-        voronoiEdgesGLAD.push_back(voronoiEdgesColor[0]);
-        voronoiEdgesGLAD.push_back(voronoiEdgesColor[1]);
-        voronoiEdgesGLAD.push_back(voronoiEdgesColor[2]);
+
+        // if the voronoi diagram is going to be shown
+        if (showVoronoi) {
+            // the coordinates are converted to float and added to the vector
+            voronoiEdgesGLAD.push_back(CGAL::to_double(source.x()));
+            voronoiEdgesGLAD.push_back(CGAL::to_double(source.y()));
+            voronoiEdgesGLAD.push_back(0.0f);
+            // the color of the edges is set
+            voronoiEdgesGLAD.push_back(voronoiEdgesColor[0]);
+            voronoiEdgesGLAD.push_back(voronoiEdgesColor[1]);
+            voronoiEdgesGLAD.push_back(voronoiEdgesColor[2]);
+            // the coordinates are converted to float and added to the vector
+            voronoiEdgesGLAD.push_back(CGAL::to_double(target.x()));
+            voronoiEdgesGLAD.push_back(CGAL::to_double(target.y()));
+            voronoiEdgesGLAD.push_back(0.0f);
+            // the color of the edges is set
+            voronoiEdgesGLAD.push_back(voronoiEdgesColor[0]);
+            voronoiEdgesGLAD.push_back(voronoiEdgesColor[1]);
+            voronoiEdgesGLAD.push_back(voronoiEdgesColor[2]);
+        } 
     }
 
     // 2- convex hull
@@ -242,20 +253,24 @@ std::tuple<std::vector<float>, std::vector<float>, std::vector<float>> getLarges
     std::vector<Segment_2> chSegments;
     // for all vertices in convexHullVerticesXY
     for (size_t i = 0; i < convexHullVerticesXY.size(); i += 2) {
-        // the coordinates are added to the edges vector
-        convexHullEdgesGLAD.push_back(convexHullVerticesXY[i]);
-        convexHullEdgesGLAD.push_back(convexHullVerticesXY[i + 1]);
-        convexHullEdgesGLAD.push_back(0.0f);
-        convexHullEdgesGLAD.push_back(convexHullColor[0]);
-        convexHullEdgesGLAD.push_back(convexHullColor[1]);
-        convexHullEdgesGLAD.push_back(convexHullColor[2]);
-        // the next vertex is added to the edges vector
-        convexHullEdgesGLAD.push_back(convexHullVerticesXY[(i + 2) % convexHullVerticesXY.size()]);
-        convexHullEdgesGLAD.push_back(convexHullVerticesXY[(i + 3) % convexHullVerticesXY.size()]);
-        convexHullEdgesGLAD.push_back(0.0f);
-        convexHullEdgesGLAD.push_back(convexHullColor[0]);
-        convexHullEdgesGLAD.push_back(convexHullColor[1]);
-        convexHullEdgesGLAD.push_back(convexHullColor[2]);
+        // if the convex hull is going to be shown
+        if (showConvexHull) {
+            // the coordinates are added to the edges vector
+            convexHullEdgesGLAD.push_back(convexHullVerticesXY[i]);
+            convexHullEdgesGLAD.push_back(convexHullVerticesXY[i + 1]);
+            convexHullEdgesGLAD.push_back(0.0f);
+            convexHullEdgesGLAD.push_back(convexHullColor[0]);
+            convexHullEdgesGLAD.push_back(convexHullColor[1]);
+            convexHullEdgesGLAD.push_back(convexHullColor[2]);
+            // the next vertex is added to the edges vector
+            convexHullEdgesGLAD.push_back(convexHullVerticesXY[(i + 2) % convexHullVerticesXY.size()]);
+            convexHullEdgesGLAD.push_back(convexHullVerticesXY[(i + 3) % convexHullVerticesXY.size()]);
+            convexHullEdgesGLAD.push_back(0.0f);
+            convexHullEdgesGLAD.push_back(convexHullColor[0]);
+            convexHullEdgesGLAD.push_back(convexHullColor[1]);
+            convexHullEdgesGLAD.push_back(convexHullColor[2]);
+        }
+
         // the segment is added to the segments vector
         chSegments.push_back(Segment_2(Point_2(convexHullVerticesXY[i], convexHullVerticesXY[i + 1]), Point_2(convexHullVerticesXY[(i + 2) % convexHullVerticesXY.size()], convexHullVerticesXY[(i + 3) % convexHullVerticesXY.size()])));
     }
@@ -269,14 +284,17 @@ std::tuple<std::vector<float>, std::vector<float>, std::vector<float>> getLarges
         // here the opposite is checked so points in the boundary are also added
         if (!ch.has_on_unbounded_side(vertex)) {
             // the vertex is added to the edges vector
-            // position
-            voronoiVerticesGLAD.push_back(CGAL::to_double(vertex.x()));
-            voronoiVerticesGLAD.push_back(CGAL::to_double(vertex.y()));
-            voronoiVerticesGLAD.push_back(0.0f);
-            // color
-            voronoiVerticesGLAD.push_back(candidatePointsColor[0]);
-            voronoiVerticesGLAD.push_back(candidatePointsColor[1]);
-            voronoiVerticesGLAD.push_back(candidatePointsColor[2]);
+            // if the candidate points are going to be shown
+            if (showCandidatePoints) {
+                // position
+                voronoiVerticesGLAD.push_back(CGAL::to_double(vertex.x()));
+                voronoiVerticesGLAD.push_back(CGAL::to_double(vertex.y()));
+                voronoiVerticesGLAD.push_back(0.0f);
+                // color
+                voronoiVerticesGLAD.push_back(candidatePointsColor[0]);
+                voronoiVerticesGLAD.push_back(candidatePointsColor[1]);
+                voronoiVerticesGLAD.push_back(candidatePointsColor[2]);
+            }
             /// the vertex is added to the candidate points vector
             candidatePoints.push_back(vertex);
         }
@@ -291,14 +309,16 @@ std::tuple<std::vector<float>, std::vector<float>, std::vector<float>> getLarges
             // if obj is a point, it is stored in the list
             const Point_2* p = CGAL::object_cast<Point_2>(&obj);
             if (p) {
-                // the coordinates are converted to float and added to the vector
-                voronoiVerticesGLAD.push_back(CGAL::to_double(p->x()));
-                voronoiVerticesGLAD.push_back(CGAL::to_double(p->y()));
-                voronoiVerticesGLAD.push_back(0.0f);
-                // the color of the edges is set
-                voronoiVerticesGLAD.push_back(candidatePointsColor[0]);
-                voronoiVerticesGLAD.push_back(candidatePointsColor[1]);
-                voronoiVerticesGLAD.push_back(candidatePointsColor[2]);
+                if (showCandidatePoints) {
+                    // the coordinates are converted to float and added to the vector
+                    voronoiVerticesGLAD.push_back(CGAL::to_double(p->x()));
+                    voronoiVerticesGLAD.push_back(CGAL::to_double(p->y()));
+                    voronoiVerticesGLAD.push_back(0.0f);
+                    // the color of the edges is set
+                    voronoiVerticesGLAD.push_back(candidatePointsColor[0]);
+                    voronoiVerticesGLAD.push_back(candidatePointsColor[1]);
+                    voronoiVerticesGLAD.push_back(candidatePointsColor[2]);
+                }
                 // the vertex is added to the candidate points vector
                 candidatePoints.push_back(*p);
             }
@@ -419,6 +439,33 @@ std::vector<float> readInputPointsFrom() {
     std::vector<float> pointVertices;
     // vector for the cgal points from the geojson file
     std::vector<Point_2> pointsCGALRaw;
+
+    // ask the user if they want to show the Voronoi diagram
+    std::cout << "Do you want to show the Voronoi diagram? (y/n): ";
+    char showVoronoiChar;
+    std::cin >> showVoronoiChar;
+    // if the user wants to show the Voronoi diagram, the boolean is set to true
+    if (showVoronoiChar == 'y') showVoronoi = true;
+    // if the user doesn't want to show the Voronoi diagram, the boolean is set to false
+    else showVoronoi = false;
+
+    // ask the user if they want to show the convex hull
+    std::cout << "Do you want to show the convex hull? (y/n): ";
+    char showConvexHullChar;
+    std::cin >> showConvexHullChar;
+    // if the user wants to show the convex hull, the boolean is set to true
+    if (showConvexHullChar == 'y') showConvexHull = true;
+    // if the user doesn't want to show the convex hull, the boolean is set to false
+    else showConvexHull = false;
+
+    // ask the user if they want to show the candidate points
+    std::cout << "Do you want to show the candidate points? (y/n): ";
+    char showCandidatePointsChar;
+    std::cin >> showCandidatePointsChar;
+    // if the user wants to show the candidate points, the boolean is set to true
+    if (showCandidatePointsChar == 'y') showCandidatePoints = true;
+    // if the user doesn't want to show the candidate points, the boolean is set to false
+    else showCandidatePoints = false;
 
     // the user can pick the file to read the input points from
     // for the boundary
