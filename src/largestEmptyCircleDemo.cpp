@@ -433,12 +433,10 @@ Point_2 transformPointToRange(Point_2 point, float minX, float minY, float maxX,
     return Point_2(x, y);
 }
 
-// funtion that reads the input points from a geojson file and returns a vector of floats that represent the vertices of the points
-std::vector<float> readInputPointsFrom() {
+// funtion to generate random points in -1, 1 range
+std::vector<float> generateRandomPoints() {
     // vector for the points vertices
     std::vector<float> pointVertices;
-    // vector for the cgal points from the geojson file
-    std::vector<Point_2> pointsCGALRaw;
 
     // ask the user if they want to show the Voronoi diagram
     std::cout << "Do you want to show the Voronoi diagram? (y/n): ";
@@ -467,94 +465,46 @@ std::vector<float> readInputPointsFrom() {
     // if the user doesn't want to show the candidate points, the boolean is set to false
     else showCandidatePoints = false;
 
-    // the user can pick the file to read the input points from
-    // for the boundary
-    std::string filename;
-    std::cout << "Enter the geojson file route for the boundary: ";
-    std::cin >> filename;
+    // the number of points is asked to the user
+    int n;
+    std::cout << "Enter the number of points: ";
+    std::cin >> n;
 
-    // using nlohmann json library to read the input points from a json file
-    using json = nlohmann::json;
+    // the user is asked if they want to generate the points randomly in a box shape or a circle shape
+    std::cout << "Do you want to generate the points in a box shape or a circle shape? (b/c): ";
+    char shape;
+    std::cin >> shape;
 
-    // the file is opened
-    std::ifstream file(filename);
-    // the file is parsed
-    json j;
-    file >> j;
-    // the file is closed
-    file.close();
-
-    // for all coordinates in the file
-    for (size_t i = 0; i < j["features"][0]["geometry"]["coordinates"][0].size(); i++) {
-        // the x and y coordinates are extracted
-        float x = j["features"][0]["geometry"]["coordinates"][0][i][0];
-        float y = j["features"][0]["geometry"]["coordinates"][0][i][1];
-        // the position is added to the cgal points vector
-        pointsCGALRaw.push_back(Point_2(x, y));
-    }
-
-    // for the points inside the boundary
-    std::cout << "Enter the geojson file route for the points inside the boundary: ";
-    std::cin >> filename;
-
-    // the file is opened
-    file.open(filename);
-    // the file is parsed
-    file >> j;
-    // the file is closed
-    file.close();
-
-    // for all features in the file
-    for (size_t i = 0; i < j["features"].size(); i++) {
-        // if ["geometry"]["type"] is "Polygon", only the first coordinates is considered
-        if (j["features"][i]["geometry"]["type"] == "Polygon") {
-            // for all coordinates in the file
-            float x = j["features"][i]["geometry"]["coordinates"][0][0][0];
-            float y = j["features"][i]["geometry"]["coordinates"][0][0][1];
+    if (shape == 'b') {
+        // the points are generated
+        for (int i = 0; i < n; i++) {
+            float x = -1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (2.0f)));
+            float y = -1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (2.0f)));
+            // position
+            pointVertices.push_back(x);
+            pointVertices.push_back(y);
+            pointVertices.push_back(0.0f);
+            // color
+            pointVertices.push_back(inputPointsColor[0]);
+            pointVertices.push_back(inputPointsColor[1]);
+            pointVertices.push_back(inputPointsColor[2]);
         }
-        // if ["geometry"]["type"] is "Point", the coordinates are extracted
-        else if (j["features"][i]["geometry"]["type"] == "Point") {
-            float x = j["features"][i]["geometry"]["coordinates"][0];
-            float y = j["features"][i]["geometry"]["coordinates"][1];
-            // the position is added to the cgal points vector
-            pointsCGALRaw.push_back(Point_2(x, y));
+    } else if (shape == 'c') {
+        // the points are generated inside a circle of radius 1 centered at (0, 0)
+        for (int i = 0; i < n; i++) {
+            float angle = static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (2.0f * M_PI)));
+            float radius = static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / 1.0f));
+            float x = radius * std::cos(angle);
+            float y = radius * std::sin(angle);
+            // position
+            pointVertices.push_back(x);
+            pointVertices.push_back(y);
+            pointVertices.push_back(0.0f);
+            // color
+            pointVertices.push_back(inputPointsColor[0]);
+            pointVertices.push_back(inputPointsColor[1]);
+            pointVertices.push_back(inputPointsColor[2]);
         }
-    }
-
-    // the minimum and maximum x and y coordinates are calculated
-    auto minX = pointsCGALRaw[0].x();
-    auto minY = pointsCGALRaw[0].y();
-    auto maxX = pointsCGALRaw[0].x();
-    auto maxY = pointsCGALRaw[0].y();
-
-    // for all points in the cgal points vector
-    for (const Point_2& point : pointsCGALRaw) {
-        // the minimum x and y coordinates are updated
-        if (point.x() < minX) minX = point.x();
-        if (point.y() < minY) minY = point.y();
-        // the maximum x and y coordinates are updated
-        if (point.x() > maxX) maxX = point.x();
-        if (point.y() > maxY) maxY = point.y();
-    }
-
-    // a vector for the cgal points in the range [-1, 1] is created
-    std::vector<Point_2> pointsCGAL;
-    // for all points in the cgal points vector
-    for (const Point_2& point : pointsCGALRaw) {
-        // the point is transformed to the range [-1, 1] and added to the points vector
-        pointsCGAL.push_back(transformPointToRange(point, minX, minY, maxX, maxY));
-    }
-
-    // the points are added to pointVertices
-    for (const Point_2& point : pointsCGAL) {
-        // position
-        pointVertices.push_back(CGAL::to_double(point.x()));
-        pointVertices.push_back(CGAL::to_double(point.y()));
-        pointVertices.push_back(0.0f);
-        // color
-        pointVertices.push_back(inputPointsColor[0]);
-        pointVertices.push_back(inputPointsColor[1]);
-        pointVertices.push_back(inputPointsColor[2]);
     }
 
     return pointVertices;
@@ -572,23 +522,8 @@ int main(int, char**) {
     // Create shader program
     unsigned int shaderProgram = createShaderProgram(vertexShaderSource, fragmentShaderSource);
 
-    // read from readInputPointsFrom() to read the input points from a geojson file
-    std::vector<float> pointVertices = readInputPointsFrom();
-
-    // // vector for the points vertices
-    // std::vector<float> pointVertices;
-    // for (int i = 0; i < n; i++) {
-    //     float x = -1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (2.0f)));
-    //     float y = -1.0f + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (2.0f)));
-    //     // position
-    //     pointVertices.push_back(x);
-    //     pointVertices.push_back(y);
-    //     pointVertices.push_back(0.0f);
-    //     // color
-    //     pointVertices.push_back(inputPointsColor[0]);
-    //     pointVertices.push_back(inputPointsColor[1]);
-    //     pointVertices.push_back(inputPointsColor[2]);
-    // }
+    // read from generateRandomPoints() to read the input points from a geojson file
+    std::vector<float> pointVertices = generateRandomPoints();
 
     // vector for the line vertices
     std::vector<float> lineVertices;
