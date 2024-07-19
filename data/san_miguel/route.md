@@ -1,0 +1,2 @@
+- ../data/san_miguel/geojson/boundary.geojson
+- ../data/san_miguel/geojson/schools.geojson

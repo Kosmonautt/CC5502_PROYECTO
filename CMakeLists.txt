@@ -13,7 +13,7 @@ find_package(OpenGL REQUIRED)
 
 # Create the executable for box boundary
 add_executable(LargestEmptyCircle 
-    src/main.cpp
+    src/largestEmptyCircleVisual.cpp
     src/glad.h
     src/glad.c
 )
