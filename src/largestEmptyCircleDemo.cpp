@@ -408,6 +408,9 @@ std::tuple<std::vector<float>, std::vector<float>, std::vector<float>> getLarges
     // the edges of the convex hull are added to the output edges vertices
     outputEdgesVerticesGLAD.insert(outputEdgesVerticesGLAD.end(), convexHullEdgesGLAD.begin(), convexHullEdgesGLAD.end());
 
+    // the center of the largest empty circle is printed
+    std::cout << "Center of the largest empty circle: " << center << std::endl;
+
     return std::make_tuple(outputPointsVerticesGLAD, outputEdgesVerticesGLAD, largestEmptyCircleVerticesGLAD);
 }
 
