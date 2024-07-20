@@ -46,9 +46,9 @@
 ## Para correr el programa
 - Windows 10/11 (WSL Ubuntu):
     - Existen tres ejecutables dentro de la carpeta build:
-        + 
-        + 
-        + 
+        - LargestEmptyCircleDemo: Permite visualizar diagrama de Voronoi (opcional), cerradura convexa (opcional), puntos candidatos (opcional) y la mayor circunferencia vacía para puntos generados al azar, donde se puede elegir el número de puntos y la forma en que son generados los puntos (cuadrado o círculo). Imprime en la consola el centro y radio del mayor círculo.
+        - LargestEmptyCircleVisual: Permite visualizar diagrama de Voronoi (opcional), cerradura convexa (opcional), puntos candidatos (opcional) y la mayor circunferencia vacía para puntos leídos de dos archivos geojson, el primero con datos "boundary" y el segundo con datos de tipo "school" (revisar la estructura de estos geojson para comprender mejor). Se visualiza los datos generados y se imprime en la consola el centro y radio del mayor círculo, sin embargo, este está transformado para un rango [-1,1] en ambos ejes.
+        - LargestEmptyCircleReal: Imprime en la consola el centro y radio del mayor círculo de puntos leídos de dos archivos geojson, el primero con datos "boundary" y el segundo con datos de tipo "school" (revisar la estructura de estos geojson para comprender mejor). 
 
 ## Trabajos de terceros utilizados
 - Como base para poder utilizar las funciones de CGAL se utilizaron los siguientes recursos de la [página oficial](https://www.cgal.org/) de CGAL:
