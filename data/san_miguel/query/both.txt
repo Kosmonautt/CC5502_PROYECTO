@@ -1,0 +1,14 @@
+[out:json][timeout:50];
+// Assuming there's a unique attribute or combination to narrow down to one city
+// Find the area ID for San Miguel
+area[name="San Miguel"][admin_level=8]["dpachile:id"="13130"]->.cityArea;
+
+// Gather boundary information for the city
+rel(area.cityArea)["boundary"="administrative"]["admin_level"="8"];
+// Print boundary information
+out geom;
+
+// Gather results for schools within this area
+nwr(area.cityArea)["amenity"="school"];
+// Print results for schools
+out geom;

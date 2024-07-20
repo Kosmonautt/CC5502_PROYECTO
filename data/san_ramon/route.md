@@ -1,2 +1,0 @@
-- ../data/san_ramon/geojson/boundary.geojson
-- ../data/san_ramon/geojson/schools.geojson

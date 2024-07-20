@@ -25,6 +25,13 @@ add_executable(LargestEmptyCircleDemo
     src/glad.c
 )
 
+# Create the executable for LargestEmptyCircleReal
+add_executable(LargestEmptyCircleReal
+    src/largestEmptyCircleReal.cpp
+    src/glad.h
+    src/glad.c
+)
+
 # Link CGAL to the executable
 target_link_libraries(LargestEmptyCircleVisual
     glfw
@@ -39,8 +46,18 @@ target_link_libraries(LargestEmptyCircleDemo
     CGAL::CGAL
 )
 
+# Link CGAL to the executable
+target_link_libraries(LargestEmptyCircleReal
+    glfw
+    OpenGL::GL
+    CGAL::CGAL
+)
+
 # Include the header files
 target_include_directories(LargestEmptyCircleDemo PUBLIC include)
 
 # Include the header files
 target_include_directories(LargestEmptyCircleVisual PUBLIC include)
+
+# Include the header files
+target_include_directories(LargestEmptyCircleReal PUBLIC include)
