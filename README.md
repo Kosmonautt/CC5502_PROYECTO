@@ -16,7 +16,20 @@
             - sudo apt install make # instalar make
             - sudo apt-get install libcgal-dev # instalar CGAL
             - sudo apt-get install libglfw3-dev # instalar GLFW
-        - Para utilizar glad.h, se descargó del [sitio oficial](https://glad.dav1d.de/) eligiendo (cosas en la foto opengl.png), se incluyeron los archivos glad.c y glad.h en src y se en la línea 25 de glad.c, se cambió #include <glad/glad.h>
+        - Para utilizar glad.h, se descargó la carpeta glad.zip generada en el [sitio oficial](https://glad.dav1d.de/), eligiendo:
+            - Language: C/C++
+            - Specification: OpenGL
+            - Api:
+                - gl: Version 3.3
+                - gles1: None
+                - gles2: None
+                - gles3: None
+            - Profile: Core
+            - Options:
+               - Generate a loader: ✔️
+               - Omit KHR (due to recent changes to the specification, this may not work anymore): ❌
+               - Local Files: ❌
+        - Se deben incluir los archivos glad.c y glad.h en src de glad.zip en src y en la línea 25 de glad.c, se debe cambiar #include <glad/glad.h>
         a #include "glad.h".
         - Para poder leer archivos geojson se utilizó [nlohmann json](https://github.com/nlohmann/json/releases/tag/v3.11.3): Es necesario descargar el archivo "json.hpp" en "Assets" del [repositorio](https://github.com/nlohmann/json/releases/tag/v3.11.3) de github. Este archivo se debe guardar en el proyecto dentro de "/include/nlohmann" (OJO: No es una "i" o un "uno", es una "ele" minúscula).
     - Para conseguir la data en geojson de las dos comunas utilizadas como ejemplo se utilizó [Overpass Turbo](https://overpass-turbo.eu/) con las queries en data/NOMBRECOMUNA/query. Las queries en boundary.txt y schools.txt retornan la frontera de la comuna y los colegios dentro de esta respectivamente, mientras que both muestra a ambas. 
@@ -32,7 +45,10 @@
 
 ## Para correr el programa
 - Windows 10/11 (WSL Ubuntu):
-    - Existen tres archivos generados 
+    - Existen tres ejecutables dentro de la carpeta build:
+        + 
+        + 
+        + 
 
 ## Trabajos de terceros utilizados
 - Como base para poder utilizar las funciones de CGAL se utilizaron los siguientes recursos de la [página oficial](https://www.cgal.org/) de CGAL:
